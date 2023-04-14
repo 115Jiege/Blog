@@ -1,0 +1,19 @@
+@import url('https://fonts.font.im/css?family=Josefin+Sans');
+@import url('https://fonts.font.im/css?family=Indie+Flower');
+@import "//at.alicdn.com/t/c/font_4014016_97fjagrro74.css"
+h2 {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+span#subtitle {
+    font-family: 'Indie Flower', cursive;
+}
+
+.iconfont {
+font-family: "iconfont" !important;
+font-size: 3em;
+/* 可以定义图标大小 */
+font-style: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
