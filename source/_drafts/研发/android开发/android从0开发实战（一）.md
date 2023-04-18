@@ -125,13 +125,13 @@ adb devices
 
 首先打开Android studio，新建native c++工程;
 第一次编译需要下载很多包，时间可能长一点，耐心等待(*^_^*)
-工程需要sodium库和国密库，但是国密库的安卓版编译可能是个难点，我过段时间在研究奥;
+工程需要sodium库和国密库，gmssl的安卓版编译我后面会整理;
 下面进行sodium库的Android版的交叉编译;
 再次点击Genymotion图标，点击start启动。
 
 ### sodium编译
 
-上面说到我用的虚拟机ubuntu2204的cpu架构是x86，所以要编译android-x86的libsodium库啦~
+由于多数真机的cpu架构是arm64-v8a，所以这里编译的是android-arm64-v8a的libsodium库~
 
 #### 编译环境配置:
 
