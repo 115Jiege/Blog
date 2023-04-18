@@ -7,7 +7,7 @@ date: '2023-03-22 14:20:39'
 tags:
 - android开发
 title: android从0开发（一）
-updated: Tue, 18 Apr 2023 03:10:52 GMT
+updated: Tue, 18 Apr 2023 03:17:59 GMT
 ---
 开发安卓平台(ˉ▽ˉ;)...
 痛苦至极，踩了好多坑/(ㄒoㄒ)/~~
@@ -92,8 +92,7 @@ Android studio的安装有以下三种方法(亲测)
 
 *ps:如果是虚拟机安装，最好把运行内存和分配的磁盘空间大一点(eg:8G 60G),AndroidStudio太大了会卡。不建议使用双核，处理器数量增多可能导致VMware变卡。*
 
-
-### 使用usb连接手机
+### 使用adb连接手机
 
 当然除了使用模拟器外，还可以通过usb或者wifi连接实体机;
 
@@ -115,7 +114,12 @@ adb start-server
 adb devices
 
 总之，这样安卓模拟器就安装好了，
-然后就开始真正的android开发叭。
+
+### 使用usb连接真机
+
+虚拟机->可移动设备->连接；
+
+打开Android Studio，可以看到真机在devices manager的physical device板块;
 
 ## Android Studio调用so
 
