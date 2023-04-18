@@ -1,10 +1,12 @@
 ---
 abbrlink: ''
-categories: []
+categories:
+- - 研发
 date: '2023-04-18 11:13:28'
-tags: []
+tags:
+- android开发
 title: title
-updated: Tue, 18 Apr 2023 03:13:31 GMT
+updated: Tue, 18 Apr 2023 03:17:32 GMT
 ---
 ## 安装Android模拟器
 
@@ -29,7 +31,7 @@ Android模拟器这步真的太痛苦了ε=( o｀ω′)ノ
 如果无法启用，选项为灰色，则使用VBoxManage以命令行的方式进行开启,操作步骤如下:
 物理机管理员身份打开cmd，cd到virtualbox安装目录;
 VBoxManage.exe list vms   #列出虚拟机名字
-.\vboxmanage.exe modifyvm hostname --nested-hw-virt on  #打开hostname的嵌套VT-x/AMD-V功能  
+.\vboxmanage.exe modifyvm hostname --nested-hw-virt on  #打开hostname的嵌套VT-x/AMD-V功能
 
 **②选择api level**
 新建项目工程时选择的api等级是工程支持的最低SDK版本，所以选择镜像的api等级应该不小于这个等级;
