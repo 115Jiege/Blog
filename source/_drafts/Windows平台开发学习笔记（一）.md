@@ -20,8 +20,8 @@ int PASCAL FAR WSAGetLastError ( void );
 
 返回该线程进行的上一次 Windows Sockets API 函数调用时的错误代码
 
-| col1 | col2 |
-| ---- | ---- | 
-|      |      | 
-|      |      | 
 
+| 返回值                       | 说明               |
+| ---------------------------- | ------------------ |
+| 6 - WSA\_INVALID\_HANDLE     | 指定的事件对象无效 |
+| 8 - WSA\_NOT\_ENOUGH\_MEMORY | 内存不够           |
