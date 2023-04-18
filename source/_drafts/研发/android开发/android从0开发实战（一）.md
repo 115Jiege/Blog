@@ -7,7 +7,7 @@ date: '2023-03-22 14:20:39'
 tags:
 - android开发
 title: android从0开发（一）
-updated: Tue, 18 Apr 2023 03:03:39 GMT
+updated: Tue, 18 Apr 2023 03:10:52 GMT
 ---
 开发安卓平台(ˉ▽ˉ;)...
 痛苦至极，踩了好多坑/(ㄒoㄒ)/~~
@@ -24,8 +24,7 @@ updated: Tue, 18 Apr 2023 03:03:39 GMT
 ## 环境配置
 
 **开发环境**
-VMware workstation
-
+Vmware workstation
 ubuntu 22.04
 
 **开发平台**
@@ -36,12 +35,7 @@ sodium
 gmssl
 
 **调试**
-真机
-
-### 搭建ubuntu22.04虚拟机
-
-在开发的过程中磕磕绊绊最终选择使用VMware搭建虚拟机，搭配真机调试
-
+真机调试
 
 ### android studio安装
 
