@@ -17,3 +17,5 @@ WSAGetLastError()是进行socket编程时需要用到的一个函数。
 **函数原型**
 
 int PASCAL FAR WSAGetLastError ( void );
+
+返回该线程进行的上一次 Windows Sockets API 函数调用时的错误代码.
