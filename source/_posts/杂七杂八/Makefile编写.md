@@ -5,9 +5,9 @@ categories:
 cover: https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg
 date: '2023-02-28 09:00:45'
 tags:
-- hexo
+- Makefile
 title: Makefile编写
-updated: Tue, 18 Apr 2023 05:10:03 GMT
+updated: Tue, 18 Apr 2023 05:10:26 GMT
 ---
 Makefile是在Linux环境下 C/C++ 程序开发必须要掌握的一个工程管理文件。
 
