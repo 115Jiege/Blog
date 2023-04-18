@@ -1,15 +1,15 @@
 //default color:
 :root
   --recent-post-bgcolor: rgba(255, 255, 255, 0.9)  //默认背景
-  --article-content-bgcolor: rgba(224, 215, 245,0.8) //描述版块背景
+  --article-content-bgcolor: rgba(196,194,231,0.8) //描述版块背景
   --recent-post-arrow: #ffffff //箭头配色
   --recent-post-cover-shadow: #ffffff //封面遮罩层配色，建议和默认值的颜色相对应。
   --recent-post-transition: all 0.5s cubic-bezier(0.59, 0.01, 0.48, 1.17)  //动画效果。不了解的不要改动
 [data-theme="dark"]
-  --recent-post-bgcolor: rgba(35,35,35,0.5)
-  --article-content-bgcolor: #99999a
-  --recent-post-arrow: #37e2dd
-  --recent-post-cover-shadow: #232323
+  --recent-post-bgcolor: #d6d5e6
+  --article-content-bgcolor: #666585
+  --recent-post-arrow: #d6d6d6
+  --recent-post-cover-shadow: rgba(85,84,111,0.6)
 // 默认的首页卡片容器布局
 .recent-posts
   padding 0 15px 0 15px
@@ -47,7 +47,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             &:hover
-              color: $text-hover
+              color: #dfdbe1
         .recent-post-meta
           height 50%
           display: flex
@@ -65,7 +65,7 @@
               transition: all .2s ease-in-out
               color #969797
               &:hover
-                color: $text-hover
+                color: #dfdbe1
       .article-content
         display flex
         text-align: center
@@ -77,8 +77,7 @@
           -webkit-box-orient vertical
           text-overflow: ellipsis
           overflow hidden
-          color #fff
-          text-shadow 1px 2px 3px #000
+          color #ffffff
           &::before
             content "❝"
             font-size 20px
