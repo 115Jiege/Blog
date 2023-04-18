@@ -1,12 +1,11 @@
 ---
-abbrlink: ''
 categories:
 - - 杂七杂八
 date: '2023-04-18 11:06:48'
 tags:
 - virtualbox
-title: ''
-updated: Tue, 18 Apr 2023 05:09:04 GMT
+title: Virtualbox搭建虚拟机
+cover: https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg
 ---
 ## 安装virtualbox:
 

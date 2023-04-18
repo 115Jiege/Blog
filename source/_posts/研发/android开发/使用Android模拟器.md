@@ -1,12 +1,11 @@
 ---
-abbrlink: ''
-categories:
-- - 研发
+title: 使用Android模拟器
 date: '2023-04-18 11:13:28'
 tags:
 - android开发
-title: title
-updated: Tue, 18 Apr 2023 05:07:46 GMT
+categories:
+- 研发
+cover: https://cdn.pixabay.com/photo/2019/04/04/15/17/smartphone-4103051_960_720.jpg
 ---
 ## 安装Android模拟器
 
