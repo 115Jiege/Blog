@@ -7,7 +7,7 @@ date: '2023-03-22 14:20:39'
 tags:
 - android开发
 title: android从0开发（一）
-updated: Tue, 18 Apr 2023 03:17:59 GMT
+updated: Tue, 18 Apr 2023 08:28:41 GMT
 ---
 开发安卓平台(ˉ▽ˉ;)...
 痛苦至极，踩了好多坑/(ㄒoㄒ)/~~
@@ -37,9 +37,9 @@ gmssl
 **调试**
 真机调试
 
-### android studio安装
+## android studio安装
 
-#### 安装jdk：
+### 安装jdk：
 
 ```
    sudo apt-get update
@@ -53,7 +53,7 @@ Android studio的安装有以下三种方法(亲测)
 法二：官网下载直接安装
 法三：源码安装
 
-#### apt在线安装
+### apt在线安装
 
 终端输入以下命令;
 
@@ -69,7 +69,7 @@ Android studio的安装有以下三种方法(亲测)
 'sudo ln -s /opt/android-studio/bin/studio.sh /usr/bin/AndroidStudio'
 在终端输入AndroidStudio或者在应用中点击图标都可以运行Android studio;
 
-#### 官网下载直接安装
+### 官网下载直接安装
 
 安装jdk;
 
@@ -84,13 +84,17 @@ Android studio的安装有以下三种方法(亲测)
 
 解压，sudo  ./studio.sh运行;
 
-#### 源码安装
+### 源码安装
 
 ```bash
    sudo wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz
 ```
 
 *ps:如果是虚拟机安装，最好把运行内存和分配的磁盘空间大一点(eg:8G 60G),AndroidStudio太大了会卡。不建议使用双核，处理器数量增多可能导致VMware变卡。*
+
+## 调试
+
+本意是使用Android Studio自带的模拟器，但是很卡，这里使用真机调试
 
 ### 使用adb连接手机
 
@@ -121,19 +125,11 @@ adb devices
 
 打开Android Studio，可以看到真机在devices manager的physical device板块;
 
-## Android Studio调用so
-
-首先打开Android studio，新建native c++工程;
-第一次编译需要下载很多包，时间可能长一点，耐心等待(*^_^*)
-工程需要sodium库和国密库，gmssl的安卓版编译我后面会整理;
-下面进行sodium库的Android版的交叉编译;
-再次点击Genymotion图标，点击start启动。
-
-### sodium编译
+## sodium-android编译
 
 由于多数真机的cpu架构是arm64-v8a，所以这里编译的是android-arm64-v8a的libsodium库~
 
-#### 编译环境配置:
+### 交叉编译环境:
 
 打开终端，apt安装
 
@@ -145,25 +141,8 @@ adb devices
    apt-get install automake
 ```
 
-#### SDK,NDK配置
+### 设置环境变量
 
-File->Setting->Android SDK->SDK tools:
-编辑SDK安装位置;
-安装NDK,CMake(勾选下方Show Package Details选择不同版本);
-
-#### androind编译
-
-下载项目：[libsodium项目](https://github.com/jedisct1/libsodium.git)
-
-**生成configure文件**
-
-```
-   cd libsodium
-   ./autogen.sh -s
-   #可以先用./autogen.sh -h查看使用说明;
-```
-
-**设置环境变量**
 sudo vim /etc/profile
 添加:
 export ANDROID_NDK_HOME=/home/Android/Sdk/ndk/23.1.7779620
@@ -171,19 +150,38 @@ export PATH=$PATH:$ANDROID_NDK_HOME
 
 source  /etc/profile
 
-**选择合适的版本编译**
+### 下载项目：
+
+[libsodium项目](https://github.com/jedisct1/libsodium.git)
+
+### 生成configure文件
 
 ```
-   cp configure ./dist-build/
-   cd ./dist-build
-   ./android-armv7-a.sh 
+   cd libsodium
+   ./autogen.sh -s
+   #可以先用./autogen.sh -h查看使用说明;
+```
+
+### 选择合适的版本编译
+
+```
+cp ./dist-build/android-build.sh android-build.sh
+cp ./dist-build/android-armv8-a.sh android-armv8-a.sh
+chmod a+x android-build.sh
+chmod a+x android-armv8-a.sh
+./android-armv8-a.sh
 ```
 
 如果编译过程中报错，需要clean，然后重新编译
 make distclean
 
-经过一系列操作，得到了一个文件夹"libsodium-android-armv7-a"，内含android版的libsodium.so;
+经过一系列操作，得到了一个文件夹"libsodium-XXX"，内含android版的libsodium.so;
 接下来进行依赖库的调用。
+
+## Android Studio调用so（C++层面）
+
+首先打开Android studio，新建native c++工程;
+第一次打开需要下载很多包，时间可能长一点，耐心等待(*^_^*)
 
 ### libsodium.so调用
 
