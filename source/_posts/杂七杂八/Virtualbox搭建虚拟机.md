@@ -39,7 +39,7 @@ cover: https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg
 输入cvt 1920 1080，查看显示模式的相关信息:"Modeline xxxxxx";
 添加显示模式，输入下面两条命令:
 sudo xrandr --newmode xxxxxx
-sudo xrandr --addmode Virtual1(虚拟机编号) "1920下680 60.00"
+sudo xrandr --addmode Virtual1(虚拟机编号) "1920x1080 60.00"
 使用命令xrandr查看，可以发现可供选择的分辨率多了自己自定义的模式，可以到设置里设置显示屏分辨率了;
 
 或者：

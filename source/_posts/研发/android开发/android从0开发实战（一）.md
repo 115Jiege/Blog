@@ -74,7 +74,7 @@ Android studio的安装有以下三种方法(亲测)
 安装jdk;
 
 ```bash
-   sudo aapt-get update
+   sudo apt-get update
    sudo apt-get upgrade
    sudo apt-get install default-jre
    sudo apt-get install default-jdk
