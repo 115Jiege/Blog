@@ -6,7 +6,7 @@ date: '2023-03-01 15:05:40'
 tags:
 - qt开发
 title: qt开发-1
-updated: Fri, 21 Apr 2023 06:54:15 GMT
+updated: Fri, 21 Apr 2023 08:37:37 GMT
 ---
 Qt是一个完整的开发框架，其工具旨在简化桌面，嵌入式和移动平台的应用程序和用户界面的创建。
 
@@ -15,10 +15,33 @@ Qt是一个完整的开发框架，其工具旨在简化桌面，嵌入式和移
 ## 项目环境：
 
 linux平台：ubuntu20.04 Qt5
-apt-get安装，参考文章(https://blog.csdn.net/weixin_48560325/article/details/124373125)
 
-在线安装，[Download Qt: Get Qt Online Installer](https://www.qt.io/download-qt-installer)
+### apt-get安装
 
+参考文章(https://blog.csdn.net/weixin_48560325/article/details/124373125)
+
+### 在线安装
+
+[Download Qt: Get Qt Online Installer](https://www.qt.io/download-qt-installer)
+
+双击在线安装
+
+没有账户的话需要注册
+
+安装目录(/opt/Qt)
+
+创建快捷方式:
+
+
+```bash
+ln -s /opt/Qt/Tools/QtCreator/bin/qtcreator /usr/bin/qtcreator
+```
+
+创建桌面文件：
+
+```bash
+cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /usr/share/applications/org.qt-project.qtcreator.desktop
+```
 
 ## Qt开发--hello world
 
@@ -195,7 +218,7 @@ class HelloDialog : public QDialog   /*新定义的继承于QDalog的类*/
    Q_OBJECT   /*定义可扩展c++功能的宏*/
 
 
-public:       
+public:   
    explicit HelloDialog(QWidget * parent = 0);      /*显式构造函数，参数用于指定父窗口，默认没有父窗口*/
    ~HelloDialog();      /*析构函数*/
 
