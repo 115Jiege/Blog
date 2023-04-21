@@ -10,7 +10,6 @@ updated: Fri, 21 Apr 2023 09:14:24 GMT
 
 ## linux版编译
 
-
 ```bash
 wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
 tar -zxvf LATEST.tar.gz
@@ -20,7 +19,6 @@ make && make check
 sudo make install
 ldconfig
 ```
-
 
 ## 安卓版编译
 
@@ -50,7 +48,7 @@ source  /etc/profile
 ### 生成configure文件
 
 ```
-   cd libsodium
+   cd libsodium-stable
    ./autogen.sh -s
    #可以先用./autogen.sh -h查看使用说明;
 ```
