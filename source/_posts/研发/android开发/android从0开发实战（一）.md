@@ -7,7 +7,7 @@ date: '2023-03-22 14:20:39'
 tags:
 - android开发
 title: android从0开发（一）
-updated: Tue, 18 Apr 2023 08:28:41 GMT
+updated: Fri, 21 Apr 2023 09:12:31 GMT
 ---
 开发安卓平台(ˉ▽ˉ;)...
 痛苦至极，踩了好多坑/(ㄒoㄒ)/~~
@@ -129,51 +129,9 @@ adb devices
 
 由于多数真机的cpu架构是arm64-v8a，所以这里编译的是android-arm64-v8a的libsodium库~
 
-### 交叉编译环境:
-
-打开终端，apt安装
-
-```bash
-   apt-get install build-enssitial
-   apt-get install clang
-   apt-get install libtool
-   apt-get install autoconf
-   apt-get install automake
-```
-
-### 设置环境变量
-
-sudo vim /etc/profile
-添加:
-export ANDROID_NDK_HOME=/home/Android/Sdk/ndk/23.1.7779620
-export PATH=$PATH:$ANDROID_NDK_HOME
-
-source  /etc/profile
-
 ### 下载项目：
 
 [libsodium项目](https://github.com/jedisct1/libsodium.git)
-
-### 生成configure文件
-
-```
-   cd libsodium
-   ./autogen.sh -s
-   #可以先用./autogen.sh -h查看使用说明;
-```
-
-### 选择合适的版本编译
-
-```
-cp ./dist-build/android-build.sh android-build.sh
-cp ./dist-build/android-armv8-a.sh android-armv8-a.sh
-chmod a+x android-build.sh
-chmod a+x android-armv8-a.sh
-./android-armv8-a.sh
-```
-
-如果编译过程中报错，需要clean，然后重新编译
-make distclean
 
 经过一系列操作，得到了一个文件夹"libsodium-XXX"，内含android版的libsodium.so;
 接下来进行依赖库的调用。
