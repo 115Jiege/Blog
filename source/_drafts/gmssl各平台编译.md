@@ -4,8 +4,17 @@ cover: ''
 date: '2023-04-21 17:28:54'
 tags: []
 title: title
-updated: Fri, 21 Apr 2023 09:28:55 GMT
+updated: Fri, 21 Apr 2023 09:30:29 GMT
 ---
+# gmssl各平台编译
+
+官址[click here]()
+
+我的项目[click here](https://github.com/115Jiege/Gmssl.git)
+
+## linux版编译
+
+
 ## 安卓版编译
 
 ### 编译环境
@@ -18,13 +27,13 @@ NDK: android-r14b
 
 Android-abi: android-21
 
-## 初步准备
+### 初步准备
 
-### NDK
+#### NDK
 
 选用android-ndk-r14b，可以在[此处](https://www.androiddevtools.cn/)下载合适版本;
 
-### 环境变量
+#### 环境变量
 
 将android-ndk-r14b所在位置添加到系统环境变量中;
 
