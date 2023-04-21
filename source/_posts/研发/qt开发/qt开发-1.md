@@ -16,11 +16,17 @@ Qt是一个完整的开发框架，其工具旨在简化桌面，嵌入式和移
 
 linux平台：ubuntu20.04 Qt5
 
-### apt-get安装
+### qtcreator安装
 
-参考文章(https://blog.csdn.net/weixin_48560325/article/details/124373125)
+```bash
+sudo apt-get install build-essential
+```
 
-### 在线安装
+#### apt-get安装
+
+[参考文章](https://blog.csdn.net/weixin_48560325/article/details/124373125)
+
+#### 在线安装
 
 [Download Qt: Get Qt Online Installer](https://www.qt.io/download-qt-installer)
 
@@ -39,10 +45,21 @@ ln -s /opt/Qt/Tools/QtCreator/bin/qtcreator /usr/bin/qtcreator
 
 创建桌面文件：
 
-```bash
 cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /usr/share/applications/org.qt-project.qtcreator.desktop
-```
 
+
+#### pro文件报错
+
+/opt/Qt/5.15.2/gcc_64/include/QtGui/qopengl.h:141:13: fatal error: GL/gl.h: No such file or directory
+141 | #   include <GL/gl.h>
+|             ^~~~~~~~~
+
+
+解决：
+
+```bash
+sudo apt-get install mesa-common-dev
+```
 ## Qt开发--hello world
 
 ### 使用示例程序
@@ -90,7 +107,6 @@ int main(int argc, char * argv[])
     return a.exec();            //使QApplication对象进入事件循环，程序运行是可以接受产生的事件(单击，键盘按下等)
 }
 ```
-
 **快速查看帮助**：
 将鼠标指针放到类名或者函数上，按F1可以在编辑器右边快速打开帮助文档。
 
@@ -160,7 +176,6 @@ QT_END_NAMESPACE      /*Qt的命名空间的结束宏*/
 
 #endif // UI_HELLODIALOG_H
 ```
-
 4)在main.cpp中引用.ui文件:
 
 ```CPP
@@ -177,7 +192,6 @@ int main(int argc, char * argv[])
     return a.exec();
 }
 ```
-
 同样这种方式也可以使用命令行编译ui文件和程序;
 
 ### 自定义C++类
@@ -198,7 +212,6 @@ int main(int argc, char * argv[])
    return a.exec();
 }
 ```
-
 4)添加ui文件;
 5)修改C++头文件，在新建的C++类中使用ui文件;
 头文件
@@ -228,7 +241,6 @@ private:
 
 #endif // HELLODIALOG_H
 ```
-
 源码文件
 
 ```CPP
@@ -248,7 +260,6 @@ HelloDialog::~HelloDialog()
 }
 }
 ```
-
 ## 窗口、子部件、窗口类型
 
 ### 窗口及子部件
@@ -284,7 +295,6 @@ int main(int argc,char *argv[])
    return ret;
 }
 ```
-
 ### 窗口分类
 
 窗口一般有标题栏和边框，但是这不是必须的。
@@ -294,7 +304,6 @@ QWidget的构造函数有两个参数:
       QWidget * parent =0;   /*默认值parent值为零，表示没有父窗口*/
       Qt::WiwdowFlags f =0;   /*参数f是窗口类型的枚举值或组合*/
 ```
-
 ## qt中的事件
 
 Qt中使用一个对象来表示一个事件，继承自QEvent类。事件与信号不同，例：点击按钮会产生鼠标事件QMouseEvent，而因为按钮被按下了，所以会发射clicked单击信号。
@@ -332,7 +341,6 @@ protected:
    void keyPressEvent(QKeyEvent *event);
 };
 ```
-
 mylineedit.cpp
 
 ```CPP
@@ -347,7 +355,6 @@ void MyLineEdit::keyPressEvent(QKeyEvent *event) // 键盘按下事件
    qDebug() << tr("MyLineEdit键盘按下事件");
 }
 ```
-
 //在Widget界面添加一个MyLineEdit部件，实现MyLineEdit类的键盘按下事件处理函数和Widget类的键盘按下事件处理函数
 
 widget.h
@@ -367,7 +374,6 @@ protected:
 
 };
 ```
-
 widget.cpp
 
 ```CPP
@@ -391,13 +397,11 @@ void Widget::keyPressEvent(QKeyEvent *event)   //添加事件处理函数定义
 }
 
 ```
-
 运行程序只显示"MyLineEdit键盘按下事件"，在mylineedit.cpp中添加:
 
 ```QT
    QLineEdit::keyPressEvent(event);        // 执行QLineEdit类的默认事件处理
    event->ignore();                    // 忽略该事件
 ```
-
 运行程序显示"MyLineEdit键盘按下事件","Widget键盘按下事件"。这表明事件是先传递给指定窗口部件(MyLineEdit)，如果该部件忽略该事件，则会传递给其父部件(Widget)。
 重新实现事件处理函数时，一般要调用父类(QLineEdit)的相应事件处理函数来实现默认操作。
