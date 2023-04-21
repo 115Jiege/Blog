@@ -4,8 +4,26 @@ cover: ''
 date: '2023-04-21 17:10:07'
 tags: []
 title: libsodium.so各平台编译
-updated: Fri, 21 Apr 2023 09:12:11 GMT
+updated: Fri, 21 Apr 2023 09:14:24 GMT
 ---
+# libsodium.so各平台编译
+
+## linux版编译
+
+
+```bash
+wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
+tar -zxvf LATEST.tar.gz
+cd libsodium-stable
+ ./configure
+make && make check
+sudo make install
+ldconfig
+```
+
+
+## 安卓版编译
+
 ### 交叉编译环境:
 
 打开终端，apt安装
@@ -27,9 +45,7 @@ export PATH=$PATH:$ANDROID_NDK_HOME
 
 source  /etc/profile
 
-### 下载项目：
-
-[libsodium项目](https://github.com/jedisct1/libsodium.git)
+](https://github.com/jedisct1/libsodium.git)
 
 ### 生成configure文件
 
