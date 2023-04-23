@@ -36,3 +36,5 @@ for (int i = 0; i < list_screen.size(); i++)
 error：
 
 libQt5WebEngineCore.so: .dynsym local [symbol](https://so.csdn.net/so/search?q=symbol&spm=1001.2101.3001.7020) at index 3
+
+解决：sudo ln -sf /usr/bin/x86\_64-linux-gnu-ld.gold /usr/bin/ld
