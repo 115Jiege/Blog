@@ -1,10 +1,12 @@
 ---
-categories: []
-cover: ''
+categories:
+- - 杂七杂八
+cover: https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg
 date: '2023-04-21 17:28:54'
-tags: []
-title: title
-updated: Sun, 23 Apr 2023 01:55:24 GMT
+tags:
+- gmssl
+title: gmssl各平台编译
+updated: Sun, 23 Apr 2023 01:56:02 GMT
 ---
 # gmssl各平台编译
 
