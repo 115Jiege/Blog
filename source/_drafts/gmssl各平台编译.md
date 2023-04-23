@@ -4,7 +4,7 @@ cover: ''
 date: '2023-04-21 17:28:54'
 tags: []
 title: title
-updated: Fri, 21 Apr 2023 09:30:29 GMT
+updated: Sun, 23 Apr 2023 00:05:05 GMT
 ---
 # gmssl各平台编译
 
@@ -14,7 +14,27 @@ updated: Fri, 21 Apr 2023 09:30:29 GMT
 
 ## linux版编译
 
+```bash
+./config --prefix=/usr/local --openssldir=/usr/local
+make && make install
+ldconfig
+```
+
 ## Windows版编译
+
+使用
+
+下载perl工具
+
+[click here]([Strawberry Perl for Windows](https://strawberryperl.com/))
+
+以管理员身份打开`x86 Native Tools Command Prompt for VS 2019` cd gmssl目录 运行以下命令
+
+```bash
+perl Configure VC-WIN32
+nmake 
+nmake install
+```
 
 ## 安卓版编译
 
