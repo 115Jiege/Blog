@@ -1,11 +1,12 @@
 ---
 categories:
 - - 杂七杂八
+cover: https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789__340.jpg
 date: '2023-04-18 11:06:48'
 tags:
 - virtualbox
 title: Virtualbox搭建虚拟机
-cover: https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg
+updated: Sun, 23 Apr 2023 02:15:12 GMT
 ---
 ## 安装virtualbox:
 
