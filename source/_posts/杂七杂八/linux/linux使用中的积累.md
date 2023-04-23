@@ -1,14 +1,17 @@
 ---
-title: linux使用中的积累
-date: 2023-02-24 14:34:10
 categories:
 - 杂七杂八
+cover: https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789__340.jpg
+date: '2023-02-24 14:34:10'
 tags:
 - linux
-cover: https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_960_720.jpg
+title: linux使用中的积累
+updated: Sun, 23 Apr 2023 02:15:48 GMT
 ---
 记录一下使用linux虚拟机时遇到的一些问题
+
 <!--more-->
+
 1.linux文件的换行：
 windows下编写的文件使用Windows(CRLF)编码，换行为/r/n;在linux下打开该文件（vi -b eg.txt)会显示行尾^M（linux下换行为/n)。解决方法:编码改为linux(LF)保存。
 2.VS Code 扩展问题:
@@ -35,7 +38,5 @@ sudo pkill Xorg  #注销桌面重新登陆
 
 ubuntu键盘无反应，无法进入ty终端，xshell远程连接，ps -t tty7显示无桌面进程。可能是由于ubuntu桌面被意外卸载，重装程序，重新登陆。
 解决方法：
- sudo apt-get install ubuntu-desktop
- sudo pkill Xorg  #注销桌面重新登陆
- 
- 
+sudo apt-get install ubuntu-desktop
+sudo pkill Xorg  #注销桌面重新登陆
