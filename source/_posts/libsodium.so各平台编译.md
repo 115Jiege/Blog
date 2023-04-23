@@ -1,11 +1,11 @@
 ---
 categories:
 - - 杂七杂八
-cover: https://cdn.pixabay.com/photo/2017/01/11/08/31/icon-1971128__340.png
+cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
 date: '2023-04-21 17:10:07'
 tags: []
 title: sodium各平台编译
-updated: Sun, 23 Apr 2023 02:09:15 GMT
+updated: Sun, 23 Apr 2023 02:13:29 GMT
 ---
 # sodium各平台编译
 
