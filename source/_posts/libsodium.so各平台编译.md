@@ -1,13 +1,13 @@
 ---
 categories:
 - - 杂七杂八
-cover: 'cover: https://cdn.pixabay.com/photo/2017/01/11/08/31/icon-1971128__340.png'
+cover: https://cdn.pixabay.com/photo/2017/01/11/08/31/icon-1971128__340.png
 date: '2023-04-21 17:10:07'
 tags: []
-title: libsodium.so各平台编译
-updated: Sun, 23 Apr 2023 01:58:46 GMT
+title: sodium各平台编译
+updated: Sun, 23 Apr 2023 02:09:15 GMT
 ---
-# libsodium.so各平台编译
+# sodium各平台编译
 
 ## linux版编译
 
