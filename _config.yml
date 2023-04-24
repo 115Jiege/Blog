@@ -163,12 +163,13 @@ bangumi: # 追番设置
     port: '代理端口'
   extra_options:
     key: value
+    
 cinema: # 追剧设置
-  enable: true
+  enable: false
   path: bilibili/index.html
   vmid: 9995891
   title: '追剧列表'
-  quote: '杰哥的追番品味就是无敌！~~~///(^v^)\\\~~~'
+  quote: '杰哥的追剧品味就是无敌！~~~///(^v^)\\\~~~'
   show: 1
   lazyload: true
   srcValue: '__image__'
