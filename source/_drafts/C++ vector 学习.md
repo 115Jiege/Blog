@@ -118,3 +118,17 @@ void swap(vector&) //交换两个同类型向量的数据
 void assign(int n,const T& x) //设置向量中前n个元素的值为x
 void assign(const\_iterator first,const\_iterator last) //向量中[first,last)中元素设置成当前向量元素
 ```
+
+## 使用
+
+```cpp
+#include < vector> 
+using namespace std;
+```
+
+1. Vector<类型>标识符
+2. Vector<类型>标识符(最大容量)
+3. Vector<类型>标识符(最大容量,初始所有值)
+4. Int i[5]={1,2,3,4,5}
+   Vector<类型>vi(I,i+2);//得到i索引值为3以后的值
+5. Vector< vector< int> >v;
