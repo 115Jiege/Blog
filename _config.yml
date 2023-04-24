@@ -16,6 +16,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
+bilibili_dir: bilibili
 #list_dir: lists
 #music_dir: music
 #Gallery_dir: Gallery
@@ -106,6 +107,7 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
+  bilibili: /bilibili/ || iconfont icon-bilibili
   #lists: /lists/ || fa fa-heartbeat
     #music: /music/ || fas fa-music
     #Gallery: /Gallery/ || fas fa-images
@@ -136,3 +138,46 @@ search:
   field: post
   content: true
   
+bangumi: # 追番设置
+  enable: true
+  source: bili
+  bgmInfoSource: 'bgmApi'
+  path: bilibili/index.html
+  vmid: 9995891
+  title: '追番列表'
+  quote: '生命不息，追番不止！'
+  show: 1
+  lazyload: true
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  showMyComment: false
+  pagination: false
+  metaColor:
+  color:
+  webp:
+  progress:
+  extraOrder:
+  proxy:
+    host: '代理host'
+    port: '代理端口'
+  extra_options:
+    key: value
+cinema: # 追剧设置
+  enable: true
+  path: bilibili/index.html
+  vmid: 9995891
+  title: '追剧列表'
+  quote: '生命不息，追剧不止！'
+  show: 1
+  lazyload: true
+  srcValue: '__image__'
+  lazyloadAttrName: 'data-src=__image__'
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  extraOrder:
+  extra_options:
+    key: value

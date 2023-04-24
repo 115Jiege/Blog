@@ -17,6 +17,7 @@ menu:
     #电影: /movies/ || fas fa-video
   #友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
+  追番: /bilibili/ || iconfont icon-bilibili
 
 hide_sidebar_menu_child: false
 

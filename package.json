@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "hexo": "^6.2.0",
+    "hexo-bilibili-bangumi": "^1.8.6",
     "hexo-deployer-git": "^3.0.0",
     "hexo-filter-image": "^1.2.3",
     "hexo-generator-archive": "^1.0.0",
