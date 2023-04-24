@@ -145,7 +145,7 @@ bangumi: # 追番设置
   path: bilibili/index.html
   vmid: 9995891
   title: '追番列表'
-  quote: '生命不息，追番不止！'
+  quote: '杰哥的追番品味就是无敌！~~~///(^v^)\\\~~~'
   show: 1
   lazyload: true
   srcValue: '__image__'
@@ -168,7 +168,7 @@ cinema: # 追剧设置
   path: bilibili/index.html
   vmid: 9995891
   title: '追剧列表'
-  quote: '生命不息，追剧不止！'
+  quote: '杰哥的追番品味就是无敌！~~~///(^v^)\\\~~~'
   show: 1
   lazyload: true
   srcValue: '__image__'
