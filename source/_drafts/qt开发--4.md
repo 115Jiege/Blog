@@ -1,10 +1,12 @@
 ---
-categories: []
+categories:
+- - 研发
 cover: https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png
 date: '2023-04-23 10:18:34'
-tags: []
+tags:
+- qt开发
 title: ''
-updated: Sun, 23 Apr 2023 02:25:21 GMT
+updated: Thu, 04 May 2023 08:34:40 GMT
 ---
 Windows的qt壳子移植到linux上
 
