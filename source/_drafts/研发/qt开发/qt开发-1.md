@@ -25,23 +25,19 @@ linux平台：ubuntu20.04 Qt5
 2)打开QtCreator新建项目:文件->新建文件或项目(或者 Ctrl + N);
 选择Application->Qt Wigests Application,填写项目信息，基类选择QDialog(Details->基类);
 建立完成后QtCreator会直接打开项目文件，打开helloworld.ui进行设计;
-Filter中搜索Label，左键拖入中间的主设计区，双击输入"Hello World"。
+Filter中搜索Label，左键拖入中间的主设计区，双击输入`Hello World`。
 
 3)使用快捷键 Ctrl + R 或者点击左下角运行程序，此时项目路径下多了一个build-XXX-unknown-Debug文件夹;
 内有cpp源文件，生成的.o中间文件，以及可执行程序。
 
-"
-Windows平台：
-生成.exe文件,运行需要把安装路径下的Qt5Cored.dll等文件复制到Debug文件中，或者直接添加环境变量;
-发布:使用QtCreator进行release版本的编译(构建->打开构建套件选择器->选择构建目标为release);
-"
+`Windows平台： 生成.exe文件,运行需要把安装路径下的Qt5Cored.dll等文件复制到Debug文件中，或者直接添加环境变量; 发布:使用QtCreator进行release版本的编译(构建->打开构建套件选择器->选择构建目标为release);`
 
 ### Qt Creator纯代码并编写程序
 
 1)新建空项目(其他项目->empty qmake project)。
 
-2)编辑XXX.pro:添加"greaterThan (QT_MAJOR_VERSION, 4): QT += widgets"。
-(linux平台"greaterThan(QT_MAJOR_VERSION, 4): QT + = widgets"会报"Assignment needs exactly one word on the left hand side.")
+2)编辑XXX.pro:添加`greaterThan (QT_MAJOR_VERSION, 4): QT += widgets`。
+(linux平台`greaterThan(QT_MAJOR_VERSION, 4): QT + = widgets`会报"Assignment needs exactly one word on the left hand side.")
 
 3)项目添加main.cpp源文件,右键->add new->c++ source;
 编辑main.cpp:
