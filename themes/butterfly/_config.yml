@@ -904,7 +904,8 @@ inject:
   head:
   - <link rel="stylesheet" href="/css/mycss.css">
   - <link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'">
-  -  <link rel="stylesheet" href="/css/iconfont-official.css">
+  - <link rel="stylesheet" href="/css/iconfont-official.css">
+  - <link rel="stylesheet" href="/css/mouse.css">
   bottom:
     - <script defer src="/js/runtime.js"></script> # 页脚计时器
     - <script src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>

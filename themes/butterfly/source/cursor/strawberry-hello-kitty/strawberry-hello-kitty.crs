@@ -1,0 +1,45 @@
+﻿[Arrow]
+Path=Strawberry Hello Kitty.cur
+
+[Help]
+Path=Strawberry Hello Kitty HS.cur
+
+[AppStarting]
+Path=Strawberry Hello Kitty WIB.ani
+
+[Wait]
+Path=Strawberry Hello Kitty Busy.cur
+
+[Crosshair]
+Path=Strawberry Hello Kitty PS.cur
+
+[IBeam]
+Path=Strawberry Hello Kitty TS.cur
+
+[NWPen]
+Path=Strawberry Hello Kitty HW.cur
+
+[No]
+Path=Strawberry Hello Kitty UN.cur
+
+[SizeNS]
+Path=Strawberry Hello Kitty VR.cur
+
+[SizeAll]
+Path=Strawberry Hello Kitty Move.cur
+
+[SizeWE]
+Path=Strawberry Hello Kitty HR.cur
+
+[SizeNWSE]
+Path=Strawberry Hello Kitty DR.cur
+
+[SizeNESW]
+Path=Strawberry Hello Kitty DR2.cur
+
+[UpArrow]
+Path=Strawberry Hello Kitty AS.cur
+
+[Hand]
+Path=Strawberry Hello Kitty LS.ani
+
