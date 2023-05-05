@@ -4,7 +4,7 @@ cover: ''
 date: '2023-05-05 08:23:30'
 tags: []
 title: u盘文件系统变为RAW
-updated: Fri, 05 May 2023 00:23:31 GMT
+updated: Fri, 05 May 2023 00:34:25 GMT
 ---
 好久没有用的u盘，今天插了试了一下，发现U盘无法被读取，于是开始排查原因；
 
@@ -28,10 +28,12 @@ updated: Fri, 05 May 2023 00:23:31 GMT
 
 所以需要把U盘格式化为NTFS，方法：
 
-1.使用chkdsk命令
+**使用chkdsk命令**
 
 我这里用这个命令就搞好了，
 
 打开win+R->cmd，输入chkdsk G:(损坏U盘)/f /r /x
 
 是否将丢失的链转换为文件(Y/N)? N
+
+如果这个命令不好使，显示`文件系统的类型是RAW，CHKDSK无法供RAW驱动器使用`，那就参考一下文章——[文件系统的类型是RAW，CHKDSK无法供RAW驱动器使用 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/393142509) 叭
