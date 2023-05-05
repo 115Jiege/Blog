@@ -6,7 +6,7 @@ date: '2023-03-01 15:05:40'
 tags:
 - qt开发
 title: qt开发-窗口与事件
-updated: Sun, 23 Apr 2023 02:04:17 GMT
+updated: Fri, 05 May 2023 00:43:48 GMT
 ---
 Qt是一个完整的开发框架，其工具旨在简化桌面，嵌入式和移动平台的应用程序和用户界面的创建。
 
@@ -15,48 +15,6 @@ Qt是一个完整的开发框架，其工具旨在简化桌面，嵌入式和移
 ## 项目环境：
 
 linux平台：ubuntu20.04 Qt5
-
-### qtcreator安装
-
-```bash
-sudo apt-get install build-essential
-```
-
-#### apt-get安装
-
-[参考文章](https://blog.csdn.net/weixin_48560325/article/details/124373125)
-
-#### 在线安装
-
-[Download Qt: Get Qt Online Installer](https://www.qt.io/download-qt-installer)
-
-双击在线安装
-
-没有账户的话需要注册
-
-安装目录(/opt/Qt)
-
-创建快捷方式:
-
-```bash
-ln -s /opt/Qt/Tools/QtCreator/bin/qtcreator /usr/bin/qtcreator
-```
-
-创建桌面文件：
-
-cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /usr/share/applications/org.qt-project.qtcreator.desktop
-
-#### pro文件报错
-
-/opt/Qt/5.15.2/gcc_64/include/QtGui/qopengl.h:141:13: fatal error: GL/gl.h: No such file or directory
-141 | #   include <GL/gl.h>
-|             ^~~~~~~~~
-
-解决：
-
-```bash
-sudo apt-get install mesa-common-dev
-```
 
 ## Qt开发--hello world
 
@@ -67,23 +25,19 @@ sudo apt-get install mesa-common-dev
 2)打开QtCreator新建项目:文件->新建文件或项目(或者 Ctrl + N);
 选择Application->Qt Wigests Application,填写项目信息，基类选择QDialog(Details->基类);
 建立完成后QtCreator会直接打开项目文件，打开helloworld.ui进行设计;
-Filter中搜索Label，左键拖入中间的主设计区，双击输入"Hello World"。
+Filter中搜索Label，左键拖入中间的主设计区，双击输入`Hello World`。
 
 3)使用快捷键 Ctrl + R 或者点击左下角运行程序，此时项目路径下多了一个build-XXX-unknown-Debug文件夹;
 内有cpp源文件，生成的.o中间文件，以及可执行程序。
 
-"
-Windows平台：
-生成.exe文件,运行需要把安装路径下的Qt5Cored.dll等文件复制到Debug文件中，或者直接添加环境变量;
-发布:使用QtCreator进行release版本的编译(构建->打开构建套件选择器->选择构建目标为release);
-"
+`Windows平台： 生成.exe文件,运行需要把安装路径下的Qt5Cored.dll等文件复制到Debug文件中，或者直接添加环境变量; 发布:使用QtCreator进行release版本的编译(构建->打开构建套件选择器->选择构建目标为release);`
 
 ### Qt Creator纯代码并编写程序
 
 1)新建空项目(其他项目->empty qmake project)。
 
-2)编辑XXX.pro:添加"greaterThan (QT_MAJOR_VERSION, 4): QT += widgets"。
-(linux平台"greaterThan(QT_MAJOR_VERSION, 4): QT + = widgets"会报"Assignment needs exactly one word on the left hand side.")
+2)编辑XXX.pro:添加`greaterThan (QT_MAJOR_VERSION, 4): QT += widgets`。
+(linux平台`greaterThan(QT_MAJOR_VERSION, 4): QT + = widgets`会报"Assignment needs exactly one word on the left hand side.")
 
 3)项目添加main.cpp源文件,右键->add new->c++ source;
 编辑main.cpp:
