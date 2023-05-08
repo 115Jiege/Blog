@@ -93,7 +93,7 @@ void qBreakpadTest::on_pushButton_clicked()
 
 ## 编译breakpad
 
-`Breakpad`为我们提供了两个工具`dump_syms`和`minidump_stackwalk`，我们将用他们来分析`dump`，定位`bug`。
+`Breakpad`提供了两个工具`dump_syms`和`minidump_stackwalk`，用于分析`dump`，定位`bug`。
 
 下载`Breakpad`源码，将`LSS(linux-syscall-support)`源码拷贝至`breakpad\src\third_party`目录下，并重命名为lss；
 
@@ -108,3 +108,41 @@ sudo make install
 编译完成后，在`breakpad/src/tools/linux/dump_syms`目录下，生成了`dump_syms`；
 
 在`breakpad/src/processor`目录下，生成了`minidump_stackwalk`。
+
+
+## 使用dump\_syms和minidump\_stackwalk定位bug
+
+
+### 1、生成符号文件
+
+使用`dump_syms`读取带调试信息的程序文件，并生成符号文件`qBreakpadTest.sym`。
+
+```bash
+dump_syms ./qBreakpadTest > qBreakpadTest.sym
+```
+
+### 2、将符号文件移动到特定路径
+
+在自己的qt工程(qBreakpadTest)所在目录下，创建目录结构：
+
+* 第一级目录，固定为`symbols`；
+* 第二级目录，为即将放入的`符号文件名称`，如`qBreakpadTest.sym`，则目录名为`qBreakpadTest`；
+* 第三级目录，在sym文件中第一行内容，有一串`16进制`编号，将其作为`目录名`。
+
+建立好以上路径后，将`qBreakpadTest.sym`移动到此路径下。
+
+### 3、生成崩溃处调用堆栈信息
+
+将`crashes目录`拷贝到和`symbols目录`一个级别目录下；
+
+然后执行如下命令，生成调用堆栈信息：
+
+```bash
+minidump_stackwalk ./crashes/7211c8b8-126d-4de2-7f8f00a4-db86eecc.dmp ./symbols > error.log
+```
+
+第一个参数，是dump文件名；
+第二个参数，固定为./symbols，应该是指定符号文件位于当前symbols目录下默认路径位置；
+第三个参数，将命令执行结果，写入到error.log文件中。
+
+查看生成的堆栈调用信息文件`error.log`，找到`“crashed”`字样，与它最近的一行，就是发生崩溃时，程序的调用堆栈。
