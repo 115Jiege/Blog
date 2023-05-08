@@ -152,3 +152,5 @@ minidump_stackwalk ./crashes/7211c8b8-126d-4de2-7f8f00a4-db86eecc.dmp ./symbols 
 * 先通过setDumpPath设置dump文件生成目录；以便在发生崩溃时，自动在该目录下生成dump文件。
 * 再通过setUploadUrl设置上报地址，以便后续将dump文件，上传到该地址。
 * 最后，通过sendDumps将dump文件发送至服务器。该函数会自动遍历，前面设置的dump生成目录，将每一个dump文件进行发送。
+
+上报演示程序，位于`qBreakpad\demo\reporter`下。
