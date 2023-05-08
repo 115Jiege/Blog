@@ -1,8 +1,11 @@
 ---
-categories: []
+categories:
+- - 研发
 cover: ''
 date: '2023-05-08 15:58:08'
-tags: []
+tags:
+- qt
+- qBreakpad
 title: ' Linux捕获程序崩溃异常——qbreakpad'
 updated: Mon, 08 May 2023 08:54:24 GMT
 ---
