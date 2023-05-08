@@ -109,9 +109,7 @@ sudo make install
 
 在`breakpad/src/processor`目录下，生成了`minidump_stackwalk`。
 
-
 ## 使用dump\_syms和minidump\_stackwalk定位bug
-
 
 ### 1、生成符号文件
 
@@ -146,3 +144,11 @@ minidump_stackwalk ./crashes/7211c8b8-126d-4de2-7f8f00a4-db86eecc.dmp ./symbols 
 第三个参数，将命令执行结果，写入到error.log文件中。
 
 查看生成的堆栈调用信息文件`error.log`，找到`“crashed”`字样，与它最近的一行，就是发生崩溃时，程序的调用堆栈。
+
+### 4、dump文件上报
+
+将生成的`dump`文件上传到指定的服务器。
+
+* 先通过setDumpPath设置dump文件生成目录；以便在发生崩溃时，自动在该目录下生成dump文件。
+* 再通过setUploadUrl设置上报地址，以便后续将dump文件，上传到该地址。
+* 最后，通过sendDumps将dump文件发送至服务器。该函数会自动遍历，前面设置的dump生成目录，将每一个dump文件进行发送。
