@@ -1,5 +1,12 @@
 ---
-
+categories: []
+cover: ''
+date: ''
+tags: []
+title: ''
+updated: 2023-5-16T13:17:19.741+8:0
+---
+---
 categories:
 
 - - 杂七杂八
@@ -8,9 +15,7 @@ categories:
     tags: []
     title: sodium各平台编译
     updated: Sun, 23 Apr 2023 02:13:29 GMT
-
 ---
-
 # sodium各平台编译
 
 ## linux版编译
@@ -22,7 +27,7 @@ cd libsodium-stable
  ./configure
 make && make check
 sudo make install
-ldconfig
+sudo ldconfig
 ```
 
 ## 安卓版编译
