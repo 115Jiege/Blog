@@ -1,13 +1,17 @@
 ---
+
 categories:
+
 - - 研发
-cover: https://cdn.pixabay.com/photo/2016/04/30/13/12/sutterlin-1362879__340.jpg
-date: '2023-04-18 14:34:21'
-tags:
+    cover: https://cdn.pixabay.com/photo/2016/04/30/13/12/sutterlin-1362879__340.jpg
+    date: '2023-04-18 14:34:21'
+    tags:
 - Windows
-title: 关于线程与进程的Windows-api
-updated: Sun, 23 Apr 2023 02:05:57 GMT
+  title: 关于线程与进程的Windows-api
+  updated: Sun, 23 Apr 2023 02:05:57 GMT
+
 ---
+
 ## 一些常用的Windows-api
 
 ### WSAGetLastError
@@ -30,14 +34,13 @@ int WSAGetLastError ( );
 
 #### 要求
 
-
-|                  |                          |
-| ---------------- | ------------------------ |
+|          |                          |
+| -------- | ------------------------ |
 | 最低支持的客户端 | windows8.1 Windows Vista |
 | 最低支持的服务端 | Windows server 2003      |
-| 标头             | winsock.h                |
-| Library          | Ws2\_32.lib              |
-| DLL              | Ws2\_32.dll              |
+| 标头       | winsock.h                |
+| Library  | Ws2\_32.lib              |
+| DLL      | Ws2\_32.dll              |
 
 ### beginthread、beginthreadex
 
@@ -173,13 +176,12 @@ DWORD WaitForSingleObject(
 
 #### 返回值
 
-
-| 返回值                              | 说明                                                      |
-| ----------------------------------- | --------------------------------------------------------- |
-| WAIT\_OBJECT\_0<br/>0x00000080L     | 等待的对象有信号（对线程来说，表示执行结束）              |
+| 返回值                                 | 说明                                 |
+| ----------------------------------- | ---------------------------------- |
+| WAIT\_OBJECT\_0<br/>0x00000080L     | 等待的对象有信号（对线程来说，表示执行结束）             |
 | WAIT\_TIMEOUT<br/>0x00000000L       | 等待指定时间内，对象一直没有信号（线程没执行完)           |
-| WAIT\_ABANDONED<br/>0x00000102L     | 对象有信号，但还是不能执行 一般是因为未获取到锁或其他原因 |
-| WAIT\_FAILED<br/>(DWORD) 0xFFFFFFFF | 函数失败。 要获得更多的错误信息，请调用 GetLastError。    |
+| WAIT\_ABANDONED<br/>0x00000102L     | 对象有信号，但还是不能执行 一般是因为未获取到锁或其他原因      |
+| WAIT\_FAILED<br/>(DWORD) 0xFFFFFFFF | 函数失败。 要获得更多的错误信息，请调用 GetLastError。 |
 
 ### TerminateThread
 
@@ -209,14 +211,13 @@ BOOL TerminateThread( HANDLE hThread, DWORD dwExitCode);
 
 #### 要求
 
-
-|                  |                     |
-| ---------------- | ------------------- |
+|          |                     |
+| -------- | ------------------- |
 | 最低支持的客户端 | Windows XP          |
 | 最低支持的服务端 | Windows server 2003 |
-| 标头             | processthreadsapi.h |
-| Library          | Kernel32.lib        |
-| DLL              | Kernel32.dll        |
+| 标头       | processthreadsapi.h |
+| Library  | Kernel32.lib        |
+| DLL      | Kernel32.dll        |
 
 #### 注意
 
@@ -276,43 +277,41 @@ SOCKET WSAAPI WSASocketA(
 
 地址系列规范
 
-
-| af            | 含义                                      |
-| ------------- | ----------------------------------------- |
-| AF\_UNSPEC    |                                           |
-| <br/>0        | 未指定地址系列                            |
-| AF\_INET      |                                           |
-| <br/>2        | 指定IPV4地址系列                          |
-| AF\_IPX       |                                           |
-| <br/>6        | 指定IPX/SPX 地址系列                      |
-| AF\_APPLETALK |                                           |
-| <br/>16       | 指定AppleTalk 地址系列                    |
-| AF\_NETBIOS   |                                           |
+| af            | 含义                               |
+| ------------- | -------------------------------- |
+| AF\_UNSPEC    |                                  |
+| <br/>0        | 未指定地址系列                          |
+| AF\_INET      |                                  |
+| <br/>2        | 指定IPV4地址系列                       |
+| AF\_IPX       |                                  |
+| <br/>6        | 指定IPX/SPX 地址系列                   |
+| AF\_APPLETALK |                                  |
+| <br/>16       | 指定AppleTalk 地址系列                 |
+| AF\_NETBIOS   |                                  |
 | <br/>17       | 指定NetBIOS 地址系列<br/>Windows 32位系统 |
-| AF\_INET6     |                                           |
-| <br/>23       | 指定I9V6地址系列                          |
-| AF\_IRDA      |                                           |
-| <br/>26       | 指定红外数据关联 (IrDA) 地址系列          |
-| AF\_BTH       |                                           |
-| <br/>32       | 指定蓝牙地址系列                          |
+| AF\_INET6     |                                  |
+| <br/>23       | 指定I9V6地址系列                       |
+| AF\_IRDA      |                                  |
+| <br/>26       | 指定红外数据关联 (IrDA) 地址系列             |
+| AF\_BTH       |                                  |
+| <br/>32       | 指定蓝牙地址系列                         |
 
 *`[in] type`*
 
 新套接字的类型规范
 
-
-| 类型            | 含义                                                                                                                                                                                           |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SOCK\_STREAM    |                                                                                                                                                                                                |
-| <br/>1          | 对应TCP                                                                                                                                                                                        |
-| SOCK\_DGRAM     |                                                                                                                                                                                                |
-| <br/>2          | 对应UDP                                                                                                                                                                                        |
-| SOCK\_RAW       |                                                                                                                                                                                                |
+| 类型              | 含义                                                                                                                   |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| SOCK\_STREAM    |                                                                                                                      |
+| <br/>1          | 对应TCP                                                                                                                |
+| SOCK\_DGRAM     |                                                                                                                      |
+| <br/>2          | 对应UDP                                                                                                                |
+| SOCK\_RAW       |                                                                                                                      |
 | <br/>3          | 提供原始套接字的套接字类型，允许应用程序操作下一层协议标头。 若要操作 IPv4 标头，必须在套接字上设置 IP\_HDRINCL 套接字选项。 若要操作 IPv6 标头，必须在套接字上设置 IPV6\_HDRINCL 套接字选项。 |
-| SOCK\_RDM       |                                                                                                                                                                                                |
-| <br/>4          | 对应多播                                                                                                                                                                                       |
-| SOCK\_SEQPACKET |                                                                                                                                                                                                |
-| <br/>5          | 提供基于数据报的伪流数据包的套接字类型。                                                                                                                                                       |
+| SOCK\_RDM       |                                                                                                                      |
+| <br/>4          | 对应多播                                                                                                                 |
+| SOCK\_SEQPACKET |                                                                                                                      |
+| <br/>5          | 提供基于数据报的伪流数据包的套接字类型。                                                                                                 |
 
 *`[in] protocol`*
 

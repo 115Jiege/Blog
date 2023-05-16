@@ -1,13 +1,16 @@
 ---
 categories:
+
 - - 杂七杂八
-cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
-date: '2023-04-21 17:28:54'
-tags:
+    cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
+    date: '2023-04-21 17:28:54'
+    tags:
 - gmssl
-title: gmssl各平台编译
-updated: Sun, 23 Apr 2023 02:13:45 GMT
+  title: gmssl各平台编译
+  updated: Sun, 23 Apr 2023 02:13:45 GMT
+
 ---
+
 # gmssl各平台编译
 
 官址[click here]()
@@ -76,19 +79,19 @@ source /etc/profile
 
 ```
 #!/bin/bash
- 
+
 ANDROID_PATH=$ANDROID_NDK_PATH
 PLATFORM_VERSION=21
- 
+
 MAKE_TOOLCHAIN=$ANDROID_PATH/build/tools/make-standalone-toolchain.sh
 export TOOLCHAIN_PATH=$ANDROID_PATH/x86
 $MAKE_TOOLCHAIN --arch=x86 --platform=android-$PLATFORM_VERSION --install-dir=$TOOLCHAIN_PATH
- 
+
 export CROSS_SYSROOT=$TOOLCHAIN_PATH/sysroot
 export TOOL_BASENAME=$TOOLCHAIN_PATH/bin
 export PATH=$CROSS_SYSROOT:$PATH
 export PATH=$TOOL_BASENAME:$PATH
- 
+
 ./Configure --prefix=/usr/local --cross-compile-prefix=i686-linux-android- no-asm no-async shared android-x86
 make && make install
 ```
@@ -97,19 +100,19 @@ make && make install
 
 ```
 #!/bin/bash
- 
+
 ANDROID_PATH=$ANDROID_NDK_PATH
 PLATFORM_VERSION=21
- 
+
 MAKE_TOOLCHAIN=$ANDROID_PATH/build/tools/make-standalone-toolchain.sh
 export TOOLCHAIN_PATH=$ANDROID_PATH/x86_64
 $MAKE_TOOLCHAIN --arch=x86_64 --platform=android-$PLATFORM_VERSION --install-dir=$TOOLCHAIN_PATH
- 
+
 export CROSS_SYSROOT=$TOOLCHAIN_PATH/sysroot
 export TOOL_BASENAME=$TOOLCHAIN_PATH/bin
 export PATH=$CROSS_SYSROOT:$PATH
 export PATH=$TOOL_BASENAME:$PATH
- 
+
 ./Configure --prefix=/usr/local --cross-compile-prefix=x86_64-linux-android- no-asm no-async shared android64
 make && make install
 ```
@@ -118,10 +121,10 @@ make && make install
 
 ```
 #!/bin/bash
- 
+
 ANDROID_PATH=$ANDROID_NDK_PATH
 PLATFORM_VERSION=21
- 
+
 MAKE_TOOLCHAIN=$ANDROID_PATH/build/tools/make-standalone-toolchain.sh
 export TOOLCHAIN_PATH=$ANDROID_PATH/aarch64-linux-android
 $MAKE_TOOLCHAIN --arch=arm64 --platform=android-$PLATFORM_VERSION --install-dir=$TOOLCHAIN_PATH
@@ -130,7 +133,7 @@ export CROSS_SYSROOT=$TOOLCHAIN_PATH/sysroot
 export TOOL_BASENAME=$TOOLCHAIN_PATH/bin
 export PATH=$CROSS_SYSROOT:$PATH
 export PATH=$TOOL_BASENAME:$PATH
- 
+
 ./Configure --prefix=/usr/local --cross-compile-prefix=aarch64-linux-android- no-asm no-async shared android64-aarch64
 make && make install
 ```
@@ -139,22 +142,21 @@ make && make install
 
 ```
 #!/bin/bash
- 
+
 ANDROID_PATH=$ANDROID_NDK_PATH
 PLATFORM_VERSION=21
- 
+
 MAKE_TOOLCHAIN=$ANDROID_PATH/build/tools/make-standalone-toolchain.sh
 export TOOLCHAIN_PATH=$ANDROID_PATH/arm-linux-android
 $MAKE_TOOLCHAIN --arch=arm --platform=android-$PLATFORM_VERSION --install-dir=$TOOLCHAIN_PATH
- 
+
 export CROSS_SYSROOT=$TOOLCHAIN_PATH/sysroot
 export TOOL_BASENAME=$TOOLCHAIN_PATH/bin
 export PATH=$CROSS_SYSROOT:$PATH
 export PATH=$TOOL_BASENAME:$PATH
- 
+
 ./Configure --prefix=/usr/local --cross-compile-prefix=arm-linux-androideabi- no-asm no-async shared android-armeabi
 make && make install
-
 ```
 
 ### 查看so库信息

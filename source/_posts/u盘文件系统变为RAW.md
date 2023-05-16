@@ -1,11 +1,14 @@
 ---
+
 categories: []
 cover: https://cdn.pixabay.com/photo/2017/01/09/12/49/mistake-1966448__340.jpg
 date: '2023-05-05 08:23:30'
 tags: []
 title: u盘格式错误
 updated: Fri, 05 May 2023 00:46:04 GMT
+
 ---
+
 好久没有用的u盘，今天插了试了一下，发现U盘无法被读取，于是开始排查原因；
 
 首先检查驱动，计算机->管理->设备管理器查看驱动，驱动没有问题；

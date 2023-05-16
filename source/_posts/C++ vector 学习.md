@@ -1,14 +1,18 @@
 ---
+
 categories:
+
 - - 研发
-cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
-date: '2023-04-24 09:10:33'
-tags:
+    cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
+    date: '2023-04-24 09:10:33'
+    tags:
 - C++
 - Vector
-title: Vector
-updated: Thu, 04 May 2023 03:20:05 GMT
+  title: Vector
+  updated: Thu, 04 May 2023 03:20:05 GMT
+
 ---
+
 # Vector（C++）
 
 Vector是一个封装了**动态**大小数组的**顺序***容器，即一个可以存放任意类型的动态数组。
@@ -79,7 +83,6 @@ iterator insert(iterator it,const_iterator first,const_iterator last) //向量�
 ### 删除函数
 
 ```cpp
-
 iterator erase(iterator it) //删除向量中迭代器指向元素
 iterator erase(iterator first,iterator last) //删除向量中[first,last)中元素
 void pop_back() //删除向量中最后一个元素
