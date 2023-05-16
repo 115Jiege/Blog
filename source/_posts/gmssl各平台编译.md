@@ -1,4 +1,12 @@
 ---
+categories: []
+cover: ''
+date: ''
+tags: []
+title: ''
+updated: 2023-5-16T13:16:59.499+8:0
+---
+---
 categories:
 
 - - 杂七杂八
@@ -8,9 +16,7 @@ categories:
 - gmssl
   title: gmssl各平台编译
   updated: Sun, 23 Apr 2023 02:13:45 GMT
-
 ---
-
 # gmssl各平台编译
 
 官址[click here]()
@@ -21,8 +27,8 @@ categories:
 
 ```bash
 ./config --prefix=/usr/local --openssldir=/usr/local
-make && make install
-ldconfig
+sudo make && make install
+sudo ldconfig
 ```
 
 ## Windows版编译
