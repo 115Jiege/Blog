@@ -16,7 +16,7 @@ updated: 2023-5-22T14:40:0.130+8:0
 
 os：ubuntu 20.04
 
-开发工具：qt5.15.2
+开发工具：qt5.15.2(默认安装目录/opt/Qt)
 
 ### 准备
 
@@ -56,3 +56,5 @@ LD_LIBRARY_PATH=$dirname
 export LD_LIBRARY_PATH
 $dirname/$appname "$@" 
 ```
+
+##
