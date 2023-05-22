@@ -41,13 +41,13 @@ apt安装会直接安装固定版本的qtcreator
 安装目录(/opt/Qt)
 
 * 创建快捷方式:
-
+  
   ```bash
   ln -s /opt/Qt/Tools/QtCreator/bin/qtcreator /usr/bin/qtcreator
   ```
 
 * 创建桌面文件：
-
+  
   ```bash
   cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /usr/share/applications/org.qt-project.qtcreator.desktop
   ```
@@ -78,47 +78,98 @@ apt安装会直接安装固定版本的qtcreator
   ```
   
   在第一行添加qmake位置`/opt/Qt/5.15.2/gcc_64/bin`
-  
+  <<<<<<< HEAD
+
 ## qt开发中出现的错误
-  
+
 ### qt安装错报错：
-  
+
 ./qt-unified-linux-x64-4.5.2-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory
-  
+
 ```bash
 export QT_DEBUG_PLUGINS=1
 sudo apt install --reinstall libxcb-xinerama0
 ```
-  
+
 ### pro文件报错：GL
 
 `/opt/Qt/5.15.2/gcc_64/include/QtGui/qopengl.h:141:13: fatal error: GL/gl.h: No such file or directory 141 | # include <GL/gl.h> | ^~~~~~~~~`
-  
+
 解决：
-  
+
 安装缺少的插件
-  
+
 ```bash
 sudo apt-get install mesa-common-dev`
- ```
-  
+```
+
 ### 使用WebEngine编译报错：libQt5WebEngineCore.so
-  
+
 `libQt5WebEngineCore.so: .dynsym local symbol at index 3 (>= sh_info of 3)
 libQt5WebEngineCore.so: .dynsym local symbol at index 4 (>= sh_info of 3)
 libQt5WebEngineCore.so: .dynsym local symbol at index 5 (>= sh_info of 3)
 libQt5WebEngineCore.so: .dynsym local symbol at index 6 (>= sh_info of 3)`
-  
+
 解决：
-  
+
 sudo ln -sf /usr/bin/x86_64-linux-gnu-ld.gold /usr/bin/ld
 
 ### Qt运行出现 Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run....解决
-  
+
 解决：
-  
+
 vim /etc/gdm3/custom.conf 
-  
+
 WaylandEnable=false 
-  
+
 reboot
+=======
+
+## qt开发中出现的错误
+
+### 没有libxcb-xinerama.so.0：
+
+  错误：
+  `./qt-unified-linux-x64-4.5.2-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory`
+  解决：
+
+```bash
+ export QT_DEBUG_PLUGINS=1
+sudo apt install --reinstall libxcb-xinerama0
+```
+
+### 没有GL文件
+
+  问题：
+  `/opt/Qt/5.15.2/gcc_64/include/QtGui/qopengl.h:141:13: fatal error: GL/gl.h: No such file or directory 141 | # include <GL/gl.h> | ^~~~~~~~~`
+
+  解决：
+
+  安装缺少的插件
+
+```bash
+sudo apt-get install mesa-common-dev报错：`./qt-unified-linux-x64-4.5.2-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory`
+```
+
+### 使用WebEngine编译报错：libQt5WebEngineCore.so
+
+```
+libQt5WebEngineCore.so: .dynsym local symbol at index 3 (>= sh_info of 3)
+libQt5WebEngineCore.so: .dynsym local symbol at index 4 (>= sh_info of 3)
+libQt5WebEngineCore.so: .dynsym local symbol at index 5 (>= sh_info of 3)
+libQt5WebEngineCore.so: .dynsym local symbol at index 6 (>= sh_info of 3)
+```
+
+  解决：
+
+  sudo ln -sf /usr/bin/x86_64-linux-gnu-ld.gold /usr/bin/ld
+
+### Qt运行出现 Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run
+
+  解决：
+
+  vim /etc/gdm3/custom.conf
+
+  WaylandEnable=false
+
+  reboot
