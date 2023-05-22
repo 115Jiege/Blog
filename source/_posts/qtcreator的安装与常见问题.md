@@ -1,8 +1,10 @@
 ---
-categories: []
+categories:
+- - 研发
 cover: ''
 date: ''
-tags: []
+tags:
+- qt
 title: qtcreator的安装与常见问题
 updated: 2023-5-22T14:33:32.531+8:0
 ---
