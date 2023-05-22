@@ -1,16 +1,13 @@
 ---
-
 categories:
-
-- - 研发
-    cover: https://cdn.pixabay.com/photo/2013/07/12/18/37/broken-153601__340.png
-    date: '2023-05-08 15:58:08'
-    tags:
+- 研发
+cover: https://cdn.pixabay.com/photo/2013/07/12/18/37/broken-153601__340.png
+date: '2023-05-08 15:58:08'
+tags:
 - qt
 - qBreakpad
-  title: ' Linux捕获程序崩溃异常——qbreakpad'
-  updated: Mon, 08 May 2023 09:21:48 GMT
-
+title: 'Linux捕获程序崩溃异常——qbreakpad'
+updated: Mon, 08 May 2023 09:21:48 GMT
 ---
 
 在进行Linux平台的qt程序开发时，出现程序崩溃退出的情况，而且没有什么信息(ˉ▽ˉ；)...。

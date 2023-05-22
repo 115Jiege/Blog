@@ -1,15 +1,12 @@
 ---
-
 categories:
-
-- - 研发
-    cover: https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png
-    date: '2023-04-23 10:18:34'
-    tags:
+- 研发
+cover:
+date: '2023-04-23 10:18:34'
+tags:
 - qt开发
-  title: qt获取屏幕分辨率
-  updated: Mon, 08 May 2023 07:57:39 GMT
-
+title: qt获取屏幕分辨率
+updated: Mon, 08 May 2023 07:57:39 GMT
 ---
 
 qt获取屏幕分辨率

@@ -1,17 +1,14 @@
 ---
-
 categories:
-
-- - 研发
-    cover: https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227__340.jpg
-    date: '2023-04-23 10:20:40'
-    tags:
+- 研发
+cover: https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227__340.jpg
+date: '2023-04-23 10:20:40'
+tags:
 - UDP数据报
 - java
 - android开发
-  title: java中发送UDP数据包
-  updated: Sun, 23 Apr 2023 02:23:47 GMT
-
+title: java中发送UDP数据包
+updated: Sun, 23 Apr 2023 02:23:47 GMT
 ---
 
 ## UDP发送数据

@@ -1,4 +1,13 @@
-VScode通过SSH远程连接主机失败；
+---
+categories: 
+- 杂七杂八
+cover: 
+date: '2023-04-23 13:56:14'
+tags:
+- VMware
+title: VScode通过SSH远程连接主机失败
+updated: Fri, 05 May 2023 00:45:24 GMT
+---
 
 报错信息：
 

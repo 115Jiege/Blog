@@ -1,15 +1,13 @@
 ---
 categories:
-
-- - 研发
-    cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
-    date: '2023-04-24 09:10:33'
-    tags:
+- 研发
+cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
+date: '2023-04-24 09:10:33'
+tags:
 - c++
 - Vector
-  title: Vector
-  updated: Thu, 04 May 2023 03:20:05 GMT
-
+title: Vector
+updated: Thu, 04 May 2023 03:20:05 GMT
 ---
 
 # Vector（C++）

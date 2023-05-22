@@ -1,22 +1,14 @@
 ---
-categories: []
-cover: ''
-date: ''
-tags: []
-title: ''
-updated: 2023-5-16T13:16:59.499+8:0
----
----
 categories:
-
-- - 杂七杂八
-    cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg
-    date: '2023-04-21 17:28:54'
-    tags:
+- 杂七杂八
+cover: https://cdn.pixabay.com/photo/2016/06/09/17/45/hacker-1446193_960_720.jpg 
+date: '2023-04-21 17:28:54'
+tags:
 - gmssl
-  title: gmssl各平台编译
-  updated: Sun, 23 Apr 2023 02:13:45 GMT
+title: gmssl各平台编译
+updated: Sun, 23 Apr 2023 02:13:45 GMT
 ---
+
 # gmssl各平台编译
 
 官址[click here]()

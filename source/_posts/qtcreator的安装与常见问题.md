@@ -1,25 +1,12 @@
 ---
-categories: []
-cover: ''
-date: ''
-tags: []
-title: ''
-updated: 2023-5-16T13:55:32.707+8:0
-
----
-
----
-
 categories:
-
-- - 研发
-    cover: https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png
-    date: '2023-05-04 16:33:56'
-    tags:
+- 研发
+cover: https://cdn.pixabay.com/photo/2017/05/09/13/33/laptop-2298286_960_720.png
+date: '2023-05-04 16:33:56'
+tags:
 - qt开发
-  title: qtcreator的安装与常见问题
-  updated: Fri, 05 May 2023 00:43:28 GMT
-
+title: qtcreator的安装与常见问题
+updated: Fri, 05 May 2023 00:43:28 GMT
 ---
 
 ## qtcreator安装
@@ -46,7 +33,7 @@ apt安装会直接安装固定版本的qtcreator
   
   ```bash
   chmod a+x qt-unified-linux-x64-4.5.2-online.run
-  ./qt-unified-linux-x64-4.5.2-online.run:
+  ./qt-unified-linux-x64-4.5.2-online.run
   ```
 
 没有账户的话需要注册
@@ -55,15 +42,15 @@ apt安装会直接安装固定版本的qtcreator
 
 * 创建快捷方式:
 
-```bash
-ln -s /opt/Qt/Tools/QtCreator/bin/qtcreator /usr/bin/qtcreator
-```
+  ```bash
+  ln -s /opt/Qt/Tools/QtCreator/bin/qtcreator /usr/bin/qtcreator
+  ```
 
 * 创建桌面文件：
 
-```bash
-cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /usr/share/applications/org.qt-project.qtcreator.desktop
-```
+  ```bash
+  cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /usr/share/applications/org.qt-project.qtcreator.desktop
+  ```
 
 * 配置构建套件
   
@@ -92,48 +79,46 @@ cp /opt/Qt/Tools/QtCreator/share/applications/org.qt-project.qtcreator.desktop /
   
   在第一行添加qmake位置`/opt/Qt/5.15.2/gcc_64/bin`
   
-  ## qt开发中出现的错误
+## qt开发中出现的错误
   
-  ### qt安装错报错：
+### qt安装错报错：
   
-  ./qt-unified-linux-x64-4.5.2-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory
+./qt-unified-linux-x64-4.5.2-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory
   
-  ```bash
-   export QT_DEBUG_PLUGINS=1
-  sudo apt install --reinstall libxcb-xinerama0
-  ```
+```bash
+export QT_DEBUG_PLUGINS=1
+sudo apt install --reinstall libxcb-xinerama0
+```
   
-  ### pro文件报错：GL
+### pro文件报错：GL
+
+`/opt/Qt/5.15.2/gcc_64/include/QtGui/qopengl.h:141:13: fatal error: GL/gl.h: No such file or directory 141 | # include <GL/gl.h> | ^~~~~~~~~`
   
-  `/opt/Qt/5.15.2/gcc_64/include/QtGui/qopengl.h:141:13: fatal error: GL/gl.h: No such file or directory 141 | # include <GL/gl.h> | ^~~~~~~~~`
+解决：
   
-  解决：
+安装缺少的插件
   
-  安装缺少的插件
+```bash
+sudo apt-get install mesa-common-dev`
+ ```
   
-  ```bash
-  sudo apt-get install mesa-common-dev报错：`./qt-unified-linux-x64-4.5.2-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory`
-  ```
+### 使用WebEngine编译报错：libQt5WebEngineCore.so
   
-  ### 使用WebEngine编译报错：libQt5WebEngineCore.so
+`libQt5WebEngineCore.so: .dynsym local symbol at index 3 (>= sh_info of 3)
+libQt5WebEngineCore.so: .dynsym local symbol at index 4 (>= sh_info of 3)
+libQt5WebEngineCore.so: .dynsym local symbol at index 5 (>= sh_info of 3)
+libQt5WebEngineCore.so: .dynsym local symbol at index 6 (>= sh_info of 3)`
   
-  ```
-  libQt5WebEngineCore.so: .dynsym local symbol at index 3 (>= sh_info of 3)
-  libQt5WebEngineCore.so: .dynsym local symbol at index 4 (>= sh_info of 3)
-  libQt5WebEngineCore.so: .dynsym local symbol at index 5 (>= sh_info of 3)
-  libQt5WebEngineCore.so: .dynsym local symbol at index 6 (>= sh_info of 3)
-  ```
+解决：
   
-  解决：
+sudo ln -sf /usr/bin/x86_64-linux-gnu-ld.gold /usr/bin/ld
+
+### Qt运行出现 Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run....解决
   
-  sudo ln -sf /usr/bin/x86_64-linux-gnu-ld.gold /usr/bin/ld
+解决：
   
-  ### Qt运行出现 Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run....解决
+vim /etc/gdm3/custom.conf 
   
-  解决：
+WaylandEnable=false 
   
-  vim /etc/gdm3/custom.conf 
-  
-  WaylandEnable=false 
-  
-  reboot
+reboot

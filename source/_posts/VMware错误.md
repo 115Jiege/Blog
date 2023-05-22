@@ -1,14 +1,11 @@
 ---
-
 categories: []
-cover: https://cdn.pixabay.com/photo/2017/01/09/12/49/mistake-1966448__340.jpg
+cover: 
 date: '2023-04-23 13:56:14'
 tags:
-
 - VMware
-  title: VMware错误
-  updated: Fri, 05 May 2023 00:45:24 GMT
-
+title: VMware错误
+updated: Fri, 05 May 2023 00:45:24 GMT
 ---
 
 记录一下在使用VMware workstation的过程中出现的问题。
