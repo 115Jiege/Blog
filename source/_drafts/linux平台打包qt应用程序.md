@@ -22,7 +22,7 @@ os：ubuntu 20.04
 
 需要准备两个脚本文件，
 
-ldd.sh：用于添加依赖库
+ldd.sh：在当前目录下新建lib文件夹，拷贝目标程序的依赖库，存放到新建的lib下；
 
 mytest.sh：用于执行程序，要和生成的可执行程序同名
 
@@ -31,7 +31,15 @@ mytest.sh：用于执行程序，要和生成的可执行程序同名
 **ldd.sh**
 
 ```cpp
-
+#!/bin/bash
+LibDir=$PWD"/lib"
+Target=$1
+lib_array=($(ldd $Target | grep -o "/.*" | grep -o "/.*/[^[:space:]]*"))
+$(mkdir $LibDir)
+for Variable in ${lib_array[@]}
+do
+    cp "$Variable" $LibDir
+done
 ```
 
 mytest
