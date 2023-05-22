@@ -6,7 +6,7 @@ date: '2023-05-22T15:12:45.668815+08:00'
 tags:
 - qt
 title: root权限启动QtWebEngine
-updated: 2023-5-22T15:12:46.226+8:0
+updated: 2023-5-22T15:23:58.847+8:0
 ---
 QtWebEngine这个部件用到了chrome的插件，众所周知，chrome不允许在root权限下启动，除非加上--no-sandbox；
 
@@ -33,7 +33,7 @@ export QTWEBENGINE_DISABLE_SANDBOX=1
 
 可以在项目->构建->构建的步骤->qmake->额外的参数中添加'DEFINES+=XXX'(单引号不要漏掉)；
 
-这样就可以在pro文件和工程其他文件中使用了.
+这样就可以在pro文件和工程其他文件中使用了。
 
 ```cpp
 #ifdef XXX
