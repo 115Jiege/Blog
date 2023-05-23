@@ -22,9 +22,9 @@ os：ubuntu 20.04
 
 需要准备两个脚本文件，
 
-ldd.sh：在当前目录下新建lib文件夹，拷贝目标程序的依赖库，存放到新建的lib下；
+`ldd.sh`：在当前目录下新建lib文件夹，拷贝目标程序的依赖库，存放到新建的lib下；
 
-mytest.sh：用于执行程序，要和生成的可执行程序同名;
+`mytest.sh`：用于执行程序，要和生成的可执行程序同名;
 
 ```bash
 chmod 777 ldd.sh
@@ -39,7 +39,7 @@ mkdir MyTest
 
 下面给出源码模板
 
-**ldd.sh**
+`ldd.sh`
 
 ```cpp
 #!/bin/bash
@@ -53,7 +53,7 @@ do
 done
 ```
 
-mytest.sh
+`mytest.sh`
 
 ```cpp
 #!/bin/bash
@@ -122,7 +122,7 @@ cd /opt/Qt/5.15.2/gcc_64/plugins/platforms/
 
 解压压缩包
 
-sudo执行mytest.sh
+`sudo执行mytest.sh`
 
 ```bash
 sudo ./mytest.sh
