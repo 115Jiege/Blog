@@ -1,16 +1,16 @@
 body {
-    cursor: url('/cursor/strawberry-hello-kitty/Strawberry Hello Kitty.cur'),
+    cursor: url('/cursor/Diona_Cursors_5673/87yghkhjj.cur'),
         default;
 }
 a,
 img,
 svg,
 button {
-    cursor: url('/cursor/strawberry-hello-kitty/Strawberry Hello Kitty AS.cur'),
+    cursor: url('/cursor/Diona_Cursors_5673/Location Select.cur'),
         default;
 }
 input,
 textarea {
-	cursor: url('/cursor/strawberry-hello-kitty/Strawberry Hello Kitty TS.cur'),
+	cursor: url('/cursor/Diona_Cursors_5673/Handwriting 3.cur'),
         text;
 }

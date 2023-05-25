@@ -182,3 +182,33 @@ cinema: # 追剧设置
   extraOrder:
   extra_options:
     key: value
+    
+#首页磁贴分类
+magnet:
+  enable: true
+  priority: 1
+  enable_page: /
+  type: categories
+  devide: 3
+  display:
+    - name: 网络安全
+      display_name: 安全最重要辣
+      icon: 👩‍💻
+    - name: 研发
+      display_name: 想不开去搞研发🙂
+      icon: 🐱‍👓
+    - name: 杂七杂八
+      display_name: 知识随记
+      icon: 📚
+  color_setting:
+    text_color: white
+#    text_hover_color: "#f2f3f4"
+    background_color: "#9b9ab8"
+    background_hover_color: "#8a89a3"
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  temple_html: '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet">${temple_html_item}</div></div>'
+  plus_style: ""
+  

@@ -266,3 +266,10 @@ font-style: normal;
     transform: scale(1.1);
   }
 }
+
+
+/*GitHub开源圆角*/
+#card-info-btn {
+  border-radius: 7px;
+  overflow: hidden;
+}
