@@ -911,11 +911,10 @@ inject:
   - <link rel="stylesheet" href="/css/mouse.css">
   - <link rel="stylesheet" href="/clock/css/clock.css">
   bottom:
-    - <script defer src="/js/runtime.js"></script> # 页脚计时器
     - <script src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
     - <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+    #<!-- 电子时钟 -->
     - <script src="/clock/js/clock.js"></script>
-    - <script src="/js/funny-title.js"></script>
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要請不要修改
