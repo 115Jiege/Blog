@@ -768,6 +768,9 @@ newest_comments:
     api_key:
   twikoo: false
   waline: false
+# 看板娘
+live2d:
+  enable: true
 
 # Bottom right button (右下角按鈕)
 # --------------------------------------
@@ -909,12 +912,10 @@ inject:
   - <link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'">
   - <link rel="stylesheet" href="/css/iconfont-official.css">
   - <link rel="stylesheet" href="/css/mouse.css">
-  - <link rel="stylesheet" href="/clock/css/clock.css">
   bottom:
     - <script src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
     - <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-    #<!-- 电子时钟 -->
-    - <script src="/clock/js/clock.js"></script>
+    - <script defer src="/live2d-widget-master/autoload.js"></script>
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要請不要修改
