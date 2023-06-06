@@ -8,13 +8,13 @@ updated: 2023-6-6T10:5:34.790+8:0
 ---
 1.安装ssh
 
-sudo apt-get install ssh
+sudo apt-get install ssh -y
 
 sudo service ssh start
 
 2.安装网络工具
 
-sudo apt install net-tools
+sudo apt install net-tools 
 
 3.安装文件编辑工具
 
