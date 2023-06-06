@@ -33,3 +33,7 @@ sudo service  NetworkManager start
 sudo chmod u+x /etc/sudoers
 
 打开etc/sudoers，添加 XXX(普通用户名) ALL=(ALL)    ALL
+
+sudo chmod u-x /etc/sudoers
+
+sudo reboot
