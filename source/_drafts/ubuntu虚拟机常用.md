@@ -37,3 +37,7 @@ sudo chmod u+x /etc/sudoers
 sudo chmod u-x /etc/sudoers
 
 sudo reboot
+
+6.安装c++开发环境
+
+sudo apt-get install build-essential
