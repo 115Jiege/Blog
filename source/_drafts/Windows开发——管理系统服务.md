@@ -7,83 +7,62 @@ tags:
 title: 'Windows开发——管理系统服务 '
 updated: 2023-6-9T8:7:2.940+8:0
 ---
-## 配置权限
+## 创建删除
 
-### openSCManager
+### CreateService
 
-[OpenSCManager](https://learn.microsoft.com/zh-cn/windows/desktop/api/winsvc/nf-winsvc-openscmanagera)
+[CreateService](https://learn.microsoft.com/zh-CN/windows/win32/api/winsvc/nf-winsvc-createservicea)
 
 1. 用途
-   建立与指定计算机上的服务控制管理器的连接，并打开指定的服务控制管理器数据库。
+   创建服务对象并将其添加到指定的服务控制管理器数据库。
 2. 语法
    
    ```cpp
-   SC_HANDLE OpenSCManagerA(
-     [in, optional] LPCSTR lpMachineName,
-     [in, optional] LPCSTR lpDatabaseName,
-     [in]           DWORD  dwDesiredAccess
-   );
-   ```
-3. 返回值
-   如果函数成功，则返回值是指定服务控制管理器数据库的句柄。
-   如果函数失败，则返回值为 NULL。 要获得更多的错误信息，请调用GetLastError。
-   SCM 可以设置以下错误代码。 其他错误代码可由 SCM 调用的注册表函数设置。
-   
-   | 返回代码                              | 描述                 |
-| ------------------------------------- | -------------------- |
-| **ERROR\_ACCESS\_DENIED**             | 请求的访问被拒绝。   |
-| **ERROR\_DATABASE\_DOES\_NOT\_EXIST** | 指定的数据库不存在。 |
-   
-   
-4. 示例
-   以完全权限打开：
-   
-   ```cpp
-   SC_HANDLE scm;
-   if((scm = openSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)==NULL)
-   {
-     printf("OpenSCManager Error/n");
-   }
-   ```
-
-### openService
-
-[openService]([openServiceA 函数 (winsvc.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-CN/windows/win32/api/winsvc/nf-winsvc-openservicea))
-
-1. 用途
-   打开现有服务。
-2. 语法
-   
-   ```cpp
-   SC_HANDLE OpenServiceA(
-   [in] SC_HANDLE hSCManager,
-   [in] LPCSTR    lpServiceName,
-   [in] DWORD     dwDesiredAccess
+   SC_HANDLE CreateServiceA(
+   [in]            SC_HANDLE hSCManager,
+   [in]            LPCSTR    lpServiceName,
+   [in, optional]  LPCSTR    lpDisplayName,
+   [in]            DWORD     dwDesiredAccess,
+   [in]            DWORD     dwServiceType,
+   [in]            DWORD     dwStartType,
+   [in]            DWORD     dwErrorControl,
+   [in, optional]  LPCSTR    lpBinaryPathName,
+   [in, optional]  LPCSTR    lpLoadOrderGroup,
+   [out, optional] LPDWORD   lpdwTagId,
+   [in, optional]  LPCSTR    lpDependencies,
+   [in, optional]  LPCSTR    lpServiceStartName,
+   [in, optional]  LPCSTR    lpPassword
    );
    ```
 3. 返回值
    如果函数成功，则返回值是服务的句柄。
-   如果函数失败，则返回值为 NULL。 要获得更多的错误信息，请调用 GetLastError。
-   服务控制管理器可以设置以下错误代码。 其他函数可由服务控制管理器调用的注册表函数设置。
-   
-   | 返回代码                             | 描述                 |
-| ------------------------------------ | -------------------- |
-| **ERROR\_ACCESS\_DENIED**            | 句柄无权访问服务。   |
-| **ERROR\_INVALID\_HANDLE**           | 指定的句柄无效。     |
-| **ERROR\_INVALID\_NAME**             | 指定的服务名称无效。 |
-| **ERROR\_SERVICE\_DOES\_NOT\_EXIST** | 指定的服务不存在。   |
-   
-   
-4. 示例
-   以完全权限打开
+   如果函数失败，则返回值为 NULL。 要获得更多的错误信息，请调用 GetLastError
+
+### DeleteService
+
+[DeleteService](https://learn.microsoft.com/zh-CN/windows/win32/api/winsvc/nf-winsvc-deleteservice)
+
+1. 用途
+   标记要从服务控制管理器数据库中删除的指定服务。
+2. 语法
    
    ```cpp
-   SC_HANDLE service;
-   if(!(service=OpenService(scm,ServerName,SERVICE\_ALL\_ACCESS)))
-   {
-   printf("OpenService error!/n");
-   }
+   BOOL DeleteService(
+   [in] SC_HANDLE hService
+   );
    ```
+3. 返回值
+   如果该函数成功，则返回值为非零值。
+   如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
+   服务控制管理器可以设置以下错误代码。 其他函数可能由服务控制管理器调用的注册表函数设置。
+   
+   | 返回代码                                 | 说明                         |
+| ------------------------------------------ | ------------------------------ |
+| **ERROR\_ACCESS\_DENIED**               | 句柄没有 DELETE 访问权限。   |
+| **ERROR\_INVALID\_HANDLE**              | 指定的句柄无效。             |
+| **ERROR\_SERVICE\_MARKED\_FOR\_DELETE** | 指定的服务已被标记为要删除。 |
+   
+   
 
 ## 枚举信息
 
@@ -251,7 +230,84 @@ updated: 2023-6-9T8:7:2.940+8:0
         }
    ```
 
-## 启动停止
+## 配置权限
+
+### openSCManager
+
+[OpenSCManager](https://learn.microsoft.com/zh-cn/windows/desktop/api/winsvc/nf-winsvc-openscmanagera)
+
+1. 用途
+   建立与指定计算机上的服务控制管理器的连接，并打开指定的服务控制管理器数据库。
+2. 语法
+   
+   ```cpp
+   SC_HANDLE OpenSCManagerA(
+     [in, optional] LPCSTR lpMachineName,
+     [in, optional] LPCSTR lpDatabaseName,
+     [in]           DWORD  dwDesiredAccess
+   );
+   ```
+3. 返回值
+   如果函数成功，则返回值是指定服务控制管理器数据库的句柄。
+   如果函数失败，则返回值为 NULL。 要获得更多的错误信息，请调用GetLastError。
+   SCM 可以设置以下错误代码。 其他错误代码可由 SCM 调用的注册表函数设置。
+   
+   | 返回代码                              | 描述                 |
+| ------------------------------------- | -------------------- |
+| **ERROR\_ACCESS\_DENIED**             | 请求的访问被拒绝。   |
+| **ERROR\_DATABASE\_DOES\_NOT\_EXIST** | 指定的数据库不存在。 |
+   
+   
+4. 示例
+   以完全权限打开：
+   
+   ```cpp
+   SC_HANDLE scm;
+   if((scm = openSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)==NULL)
+   {
+     printf("OpenSCManager Error/n");
+   }
+   ```
+
+### openService
+
+[openService]([openServiceA 函数 (winsvc.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-CN/windows/win32/api/winsvc/nf-winsvc-openservicea))
+
+1. 用途
+   打开现有服务。
+2. 语法
+   
+   ```cpp
+   SC_HANDLE OpenServiceA(
+   [in] SC_HANDLE hSCManager,
+   [in] LPCSTR    lpServiceName,
+   [in] DWORD     dwDesiredAccess
+   );
+   ```
+3. 返回值
+   如果函数成功，则返回值是服务的句柄。
+   如果函数失败，则返回值为 NULL。 要获得更多的错误信息，请调用 GetLastError。
+   服务控制管理器可以设置以下错误代码。 其他函数可由服务控制管理器调用的注册表函数设置。
+   
+   | 返回代码                             | 描述                 |
+| ------------------------------------ | -------------------- |
+| **ERROR\_ACCESS\_DENIED**            | 句柄无权访问服务。   |
+| **ERROR\_INVALID\_HANDLE**           | 指定的句柄无效。     |
+| **ERROR\_INVALID\_NAME**             | 指定的服务名称无效。 |
+| **ERROR\_SERVICE\_DOES\_NOT\_EXIST** | 指定的服务不存在。   |
+   
+   
+4. 示例
+   以完全权限打开
+   
+   ```cpp
+   SC_HANDLE service;
+   if(!(service=OpenService(scm,ServerName,SERVICE\_ALL\_ACCESS)))
+   {
+   printf("OpenService error!/n");
+   }
+   ```## 启动停止
+   ```
 
 ### startService
 
@@ -288,4 +344,35 @@ updated: 2023-6-9T8:7:2.940+8:0
 3. 返回值
    如果该函数成功，则返回值为非零值。
    如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
+
+## 更改启动方式
+
+### ChangeServiceConfig
+
+[ChangeServiceConfig](https://learn.microsoft.com/zh-cn/windows/win32/api/winsvc/nf-winsvc-changeserviceconfiga)
+
+1. 用途
+   更改服务的配置参数
+2. 语法
+   
+   ```cpp
+   BOOL ChangeServiceConfigA(
+   [in]            SC_HANDLE hService,
+   [in]            DWORD     dwServiceType,
+   [in]            DWORD     dwStartType,
+   [in]            DWORD     dwErrorControl,
+   [in, optional]  LPCSTR    lpBinaryPathName,
+   [in, optional]  LPCSTR    lpLoadOrderGroup,
+   [out, optional] LPDWORD   lpdwTagId,
+   [in, optional]  LPCSTR    lpDependencies,
+   [in, optional]  LPCSTR    lpServiceStartName,
+   [in, optional]  LPCSTR    lpPassword,
+   [in, optional]  LPCSTR    lpDisplayName
+   );
+   ```
+3. 返回值
+   如果该函数成功，则返回值为非零值。
+   如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
+
+
 
