@@ -198,7 +198,7 @@ updated: 2023-6-9T8:7:2.940+8:0
 
 ### QueryServiceConfig
 
-[QueryServiceConfig](https://learn.microsoft.com/zh-cn/windows/desktop/api/winsvc/nf-winsvc-queryserviceconfig2a)
+[QueryServiceConfig](https://learn.microsoft.com/zh-cn/windows/desktop/api/winsvc/nf-winsvc-queryserviceconfiga)
 
 1. 用途
    检索指定服务的配置参数。
@@ -250,4 +250,27 @@ updated: 2023-6-9T8:7:2.940+8:0
             printf("禁止/n");
         }
    ```
+
+## 启动停止
+
+### startService
+
+[startService](https://learn.microsoft.com/zh-CN/windows/win32/api/winsvc/nf-winsvc-startservicea)
+
+1. 用途
+   启动服务
+2. 语法
+   
+   ```cpp
+   BOOL StartServiceA(
+   [in]           SC_HANDLE hService,
+   [in]           DWORD     dwNumServiceArgs,
+   [in, optional] LPCSTR    *lpServiceArgVectors
+   );
+   ```
+3. 返回值
+   如果该函数成功，则返回值为非零值。
+   如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
+
+
 
