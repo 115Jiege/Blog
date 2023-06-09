@@ -143,7 +143,7 @@ updated: 2023-6-9T8:7:2.940+8:0
     EnumServicesStatus(scm,SERVICE\_WIN32,   
                        SERVICE\_STATE\_ALL,   
                        (LPENUM\_SERVICE\_STATUS)lpServices,   
-                        64 \* 1024,   
+                        64  * 1024,   
                         &nSize,   
                         &n,   
                         &nResumeHandle);
@@ -198,26 +198,26 @@ updated: 2023-6-9T8:7:2.940+8:0
 4. 示例
 
 ```cpp
-LPENUM\_SERVICE\_STATUS lpServices    = NULL;   
+BYTE  lpServices[2048]    = {0};   
   DWORD    nSize = 0;
   DWORD    n;
-  DWORD    nResumeHandle = 0;
+  DWORD    nResumeHandle = 0
  
-  lpServices = (LPENUM\_SERVICE\_STATUS) LocalAlloc(LPTR, 64 \* 1024);   
-  EnumServicesStatus(scm,SC\_ENUM\_PROCESS\_INFO，
-                     SERVICE\_WIN32,   
-                     SERVICE\_STATE\_ALL,   
-                     (LPENUM\_SERVICE\_STATUS)lpServices,   
-                      64 \* 1024,   
+  EnumServicesStatus(scm,SC_ENUM_PROCESS_INFO，
+                     SERVICE_WIN32,   
+                     SERVICE_STATE_ALL,   
+                      lpServices,   
+                      2048,
                       &nSize,   
                       &n,   
-                      &nResumeHandle);
+                      &nResumeHandle,
+                       NULL);
  
   for ( i = 0; i < n; i++)   
   { 
       printf("服务名称: %s",lpServices[i].lpServiceName);
       printf("显示名称: %s",lpServices[i].lpDisplayName);
-      if ( lpServices[i].ServiceStatus.dwCurrentState!=SERVICE\_STOPPED)
+      if ( lpServices[i].ServiceStatus.dwCurrentState!=SERVICE_STOPPED)
       {   
           printf("启动状态:    已启动/n");
       }
