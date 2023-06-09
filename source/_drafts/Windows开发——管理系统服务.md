@@ -272,5 +272,20 @@ updated: 2023-6-9T8:7:2.940+8:0
    如果该函数成功，则返回值为非零值。
    如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
 
+### ControlService
 
+1. 用途
+   将控制代码发送到服务。
+2. 语法
+   
+   ```cpp
+   BOOL ControlService(
+   [in]  SC_HANDLE        hService,
+   [in]  DWORD            dwControl,
+   [out] LPSERVICE_STATUS lpServiceStatus
+   );
+   ```
+3. 返回值
+   如果该函数成功，则返回值为非零值。
+   如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
 
