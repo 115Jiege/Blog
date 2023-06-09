@@ -195,32 +195,59 @@ updated: 2023-6-9T8:7:2.940+8:0
 | **ERROR\_SHUTDOWN\_IN\_PROGRESS** | 系统正在关闭;无法调用此函数。                                                                           |
    
    
-4. 示例
 
-```cpp
-BYTE  lpServices[2048]    = {0};   
-  DWORD    nSize = 0;
-  DWORD    n;
-  DWORD    nResumeHandle = 0
- 
-  EnumServicesStatus(scm,SC_ENUM_PROCESS_INFO，
-                     SERVICE_WIN32,   
-                     SERVICE_STATE_ALL,   
-                      lpServices,   
-                      2048,
-                      &nSize,   
-                      &n,   
-                      &nResumeHandle,
-                       NULL);
- 
-  for ( i = 0; i < n; i++)   
-  { 
-      printf("服务名称: %s",lpServices[i].lpServiceName);
-      printf("显示名称: %s",lpServices[i].lpDisplayName);
-      if ( lpServices[i].ServiceStatus.dwCurrentState!=SERVICE_STOPPED)
-      {   
-          printf("启动状态:    已启动/n");
-      }
-  }
-```
+### QueryServiceConfig
+
+[QueryServiceConfig](https://learn.microsoft.com/zh-cn/windows/desktop/api/winsvc/nf-winsvc-queryserviceconfig2a)
+
+1. 用途
+   检索指定服务的配置参数。
+2. 语法
+   
+   ```cpp
+   BOOL QueryServiceConfigA(
+   [in]            SC_HANDLE               hService,
+   [out, optional] LPQUERY_SERVICE_CONFIGA lpServiceConfig,
+   [in]            DWORD                   cbBufSize,
+   [out]           LPDWORD                 pcbBytesNeeded
+   );
+   ```
+3. 返回值
+   如果该函数成功，则返回值为非零值。
+   如果函数失败，则返回值为零。 要获得更多的错误信息，请调用 GetLastError。
+   服务控制管理器可以设置以下错误代码。 其他可由服务控制管理器调用的注册表函数设置。
+   
+   | 返回代码                         | 说明                                                                                                                                        |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ERROR\_ACCESS\_DENIED**       | 句柄没有SERVICE\_QUERY\_CONFIG访问权限。                                                                                                    |
+| **ERROR\_INSUFFICIENT\_BUFFER** | 服务配置信息比 *lpServiceConfig* 缓冲区更适合。 获取所有信息所需的字节数在 *tbBytesNeededed* 参数中返回。 不写入 ​*lpServiceConfig*​。 |
+| **ERROR\_INVALID\_HANDLE**      | 指定的句柄无效。                                                                                                                            |
+   
+   
+4. 示例
+   
+   ```cpp
+   LPQUERY\_SERVICE\_CONFIG ServicesInfo = NULL;
+   
+    for ( i = 0; i < n; i++)   
+    {
+        SC_HANDLE service = NULL;
+        DWORD     nResumeHandle = 0; 
+        service=OpenService(scm,lpServices[i].lpServiceName,SERVICE_ALL_ACCESS);
+        ServicesInfo = (LPQUERY_SERVICE_CONFIG) LocalAlloc(LPTR, 64 \* 1024);      //注意分配足够的空间
+        QueryServiceConfig(service,ServicesInfo,64 \* 1024,&nResumeHandle);      //枚举各个服务信息
+   
+        printf("程序路径: %s",ServicesInfo->lpBinaryPathName);   
+        if(2==ServicesInfo->dwStartType)        //启动方式   
+        { 
+            printf("自动/n");   
+        }   
+        if(3==ServicesInfo->dwStartType)        {   
+            printf("手动/n");
+        }
+        if(4==ServicesInfo->dwStartType)   
+        {   
+            printf("禁止/n");
+        }
+   ```
 
