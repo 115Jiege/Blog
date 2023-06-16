@@ -3,6 +3,9 @@ title: 针对一种新型Modbus Dos攻击的讨论
 top_imgs:
 categories:
 - 网络安全
+tags:
+- Dos
+- Modbus
 cover: https://cdn.pixabay.com/photo/2014/04/05/11/40/knife-316655_960_720.jpg
 ---
 工作一个周，摸鱼一个周，摩尔庄园也玩腻了，在much哥哥的诱惑下开始建立自己的博客。平时就记录一些学习的新知识和生活上的小乐趣，yey!

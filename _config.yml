@@ -183,6 +183,7 @@ cinema: # 追剧设置
   extra_options:
     key: value
     
+    
 #首页磁贴分类
 magnet:
   enable: true
@@ -191,15 +192,24 @@ magnet:
   type: categories
   devide: 3
   display:
-    - name: 网络安全
-      display_name: 安全最重要辣
-      icon: 👩‍💻
-    - name: 研发
-      display_name: 想不开去搞研发🙂
-      icon: 🐱‍👓
-    - name: 杂七杂八
-      display_name: 知识随记
-      icon: 📚
+    - name: 国密
+      display_name: gmssl,我有努力过
+      icon: ╮(╯▽╰)╭
+    - name: qt
+      display_name: 搞花里胡哨的qt
+      icon: 🙂
+    - name: tips整理
+      display_name: 一步一坑
+      icon: 😟
+    - name: 平台-android
+      display_name: android robot
+      icon: 🤖
+    - name: 平台-Linux
+      display_name: Linux，我永远的依靠
+      icon: 😌
+    - name: 平台-Windows
+      display_name: Windows好难
+      icon: (・∀・*)
   color_setting:
     text_color: white
 #    text_hover_color: "#f2f3f4"
@@ -211,4 +221,3 @@ magnet:
     index: 0
   temple_html: '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet">${temple_html_item}</div></div>'
   plus_style: ""
-  
