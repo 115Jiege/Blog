@@ -1,12 +1,12 @@
 ---
 categories:
 - - tips整理
-cover: ''
+cover: https://www.hippopx.com/zh/virtual-reality-big-data-internet-future-communication-system-business-73351
 date: '2023-06-30T15:40:10.601658+08:00'
 tags:
 - 踩坑
 title: github拉取上传失败的解决
-updated: 2023-6-30T16:33:42.818+8:0
+updated: 2023-6-30T16:36:47.219+8:0
 ---
 今天久违的更新一下国密，结果push的时候提示`could not find UI helper 'GitHub.UI'`，并且卡死在这里。
 
