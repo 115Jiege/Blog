@@ -1,6 +1,7 @@
 ---
-categories: []
-cover: ''
+categories:
+- - 平台-Windows
+cover: https://www.hippopx.com/zh/keyboard-key-success-online-computer-the-business-computer-keyboard-67205
 date: '2023-06-08T13:26:52.637184+08:00'
 tags:
 - Windows
