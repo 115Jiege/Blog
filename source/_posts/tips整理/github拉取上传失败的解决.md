@@ -1,7 +1,7 @@
 ---
 categories:
 - - tips整理
-cover: https://www.hippopx.com/zh/virtual-reality-big-data-internet-future-communication-system-business-73351
+cover: https://www.shutterstock.com/image-vector/error-404-page-not-found-600w-2107093610.jpg
 date: '2023-06-30T15:40:10.601658+08:00'
 tags:
 - 踩坑
