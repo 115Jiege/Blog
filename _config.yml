@@ -14,6 +14,7 @@ pretty_urls:
 source_dir: source
 public_dir: public
 tag_dir: tags
+air_conditioner_dir: air_conditioner
 archive_dir: archives
 category_dir: categories
 bilibili_dir: bilibili
@@ -106,6 +107,7 @@ menu:
   about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
+  air_conditioner: /air/ ||  fa fa-heartbeat
   archives: /archives/ || fa fa-archive
   bilibili: /bilibili/ || iconfont icon-bilibili
   #lists: /lists/ || fa fa-heartbeat
