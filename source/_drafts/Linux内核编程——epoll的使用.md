@@ -60,7 +60,7 @@ if (-1 == epoll_ctl(epfd, EPOLL_CTL_ADD, listen_sock, &ev))
 
 ```cpp
 /*等待事件*/
-int ret = epoll_wait(socket_info->udp_epfd, &event, 1, RECV_TIMEOUT);
+int ret = epoll_wait(listen_sock, &event, 1, RECV_TIMEOUT);
 if (-1 == ret)
 {
 	ret = errno;
