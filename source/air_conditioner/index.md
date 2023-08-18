@@ -5,4 +5,4 @@ updated: 2023-7-20T16:32:33.804+8:0
 ---
 嘿嘿，进来吹空调辣😊
 
-<iframe height="740" src="https://ac.yunyoujun.cn"></iframe>
+<iframe frameborder="0" scrolling="auto" height="800" src="https://ac.yunyoujun.cn" width=100%></iframe>

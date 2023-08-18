@@ -5,7 +5,8 @@ keywords: null
 author: Jiege
 language: zh-CN
 timezone: Asia/Shanghai
-url: https://115jiege.github.io/
+root: /my-hexo-blog/
+url: https://115jiege.github.io/my-hexo-blog/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -69,7 +70,7 @@ ignore: null
 theme: butterfly
 deploy:
   type: git
-  repository: git@github.com:115Jiege/115Jiege.github.io.git
+  repository: https://github.com/115Jiege/my-hexo-blog.git
   branch: master
 symbols_count_time:
   symbols: true
